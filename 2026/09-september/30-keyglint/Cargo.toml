@@ -1,0 +1,9 @@
+[package]
+name = "keyglint"
+version = "0.1.0"
+edition = "2021"
+
+description = "Find leaked secrets in source code before they reach Git"
+license = "MIT"
+
+[dependencies]
