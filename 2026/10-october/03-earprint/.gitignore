@@ -1,0 +1,5 @@
+earprint
+build/
+*.o
+*.wav
+*.plist
