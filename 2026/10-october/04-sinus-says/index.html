@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Sinus Says: an ECG rhythm trainer that marks your method, not just your guess.">
+  <title>Sinus Says</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <h1>Sinus Says</h1>
+    <p class="tagline">Read the strip step by step. Every step is marked, not just the final answer.</p>
+  </header>
+
+  <main>
+    <section class="card" aria-labelledby="strip-title">
+      <div class="strip-head">
+        <h2 id="strip-title">Strip <span id="code" class="code"></span></h2>
+        <p class="scale">6 seconds · small box = 40 ms · large box = 200 ms</p>
+      </div>
+      <div class="strip-scroll" tabindex="0" aria-label="ECG strip, scroll sideways to see all 6 seconds">
+        <svg id="strip" role="img" aria-label="A 6-second ECG rhythm strip"></svg>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="step-title">
+      <p id="progress" class="progress"></p>
+      <h2 id="step-title"></h2>
+      <div id="options" class="options"></div>
+      <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+      <ol id="summary" class="summary" hidden></ol>
+      <div class="actions">
+        <button id="next" type="button" class="primary" hidden>Next</button>
+        <button id="new" type="button">New strip</button>
+      </div>
+    </section>
+
+    <section class="card small" aria-labelledby="share-title">
+      <h2 id="share-title">Same strip, different person</h2>
+      <p>Every strip has a short code. Give the code to a friend and they get exactly the same tracing.</p>
+      <div class="load">
+        <label for="code-input">Strip code</label>
+        <input id="code-input" type="text" inputmode="text" autocomplete="off" spellcheck="false" maxlength="7" pattern="[0-9A-Za-z]{1,7}">
+        <button id="load" type="button">Load</button>
+      </div>
+      <p id="load-error" class="error" role="alert"></p>
+      <p id="score" class="score"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>For learning only.</strong> These tracings are simplified and computer-generated. This is not a medical device and must never be used to interpret a real ECG or make clinical decisions.</p>
+  </footer>
+
+  <noscript><p class="error">Sinus Says needs JavaScript to draw the strips.</p></noscript>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

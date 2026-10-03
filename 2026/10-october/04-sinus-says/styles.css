@@ -1,0 +1,128 @@
+:root {
+  --bg: #f6f4f1;
+  --card: #ffffff;
+  --ink: #1d2433;
+  --muted: #5b6475;
+  --line: #d9dde5;
+  --accent: #b3123f;
+  --good: #11693a;
+  --good-bg: #e3f4ea;
+  --bad: #a11a1a;
+  --bad-bg: #fbe6e6;
+  --paper: #fff5f5;
+  --grid-minor: #f4c9cf;
+  --grid-major: #e794a0;
+  --trace: #14181f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12151b;
+    --card: #1b2029;
+    --ink: #eef1f6;
+    --muted: #a3acbd;
+    --line: #323a48;
+    --accent: #ff7a9c;
+    --good: #7ddca4;
+    --good-bg: #173524;
+    --bad: #ff9a9a;
+    --bad-bg: #3d1c1c;
+    --paper: #0f1a17;
+    --grid-minor: #1c332c;
+    --grid-major: #2d5446;
+    --trace: #7dffb5;
+  }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.top, main, footer { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+.top { padding-top: 28px; }
+h1 { margin: 0; font-size: 2rem; letter-spacing: -0.02em; color: var(--accent); }
+h2 { margin: 0 0 8px; font-size: 1.15rem; }
+.tagline { margin: 4px 0 20px; color: var(--muted); }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 16px;
+}
+.card.small p { color: var(--muted); margin: 0 0 12px; }
+
+.strip-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 16px; }
+.scale { margin: 0 0 8px; color: var(--muted); font-size: 0.85rem; }
+.code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--accent); }
+
+.strip-scroll { overflow-x: auto; border-radius: 8px; border: 1px solid var(--line); }
+.strip-scroll:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+#strip { display: block; width: 100%; min-width: 900px; height: auto; background: var(--paper); }
+.grid-minor { stroke: var(--grid-minor); stroke-width: 1; }
+.grid-major { stroke: var(--grid-major); stroke-width: 1.5; }
+.trace { fill: none; stroke: var(--trace); stroke-width: 2.2; stroke-linejoin: round; stroke-linecap: round; }
+.mark { stroke: var(--accent); stroke-width: 2; }
+.mark-text { fill: var(--accent); font: 600 13px system-ui, sans-serif; text-anchor: middle; }
+
+.progress { margin: 0 0 4px; color: var(--muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.options { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; margin: 12px 0; }
+
+button {
+  font: inherit;
+  color: var(--ink);
+  background: var(--card);
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  padding: 11px 14px;
+  min-height: 44px;
+  cursor: pointer;
+  text-align: left;
+}
+button:hover:not(:disabled) { border-color: var(--accent); }
+button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+button:disabled { cursor: default; opacity: 0.75; }
+button.primary { background: var(--accent); border-color: var(--accent); color: var(--card); font-weight: 600; }
+button.right { border-color: var(--good); background: var(--good-bg); color: var(--good); opacity: 1; font-weight: 600; }
+button.wrong { border-color: var(--bad); background: var(--bad-bg); color: var(--bad); opacity: 1; }
+
+.feedback { min-height: 1.5em; margin: 8px 0; }
+.feedback.right { color: var(--good); }
+.feedback.wrong { color: var(--bad); }
+
+.summary { margin: 8px 0 12px; padding-left: 1.3em; }
+.summary li { margin: 4px 0; }
+.summary .right { color: var(--good); }
+.summary .wrong { color: var(--bad); }
+
+.actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.load { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.load label { font-weight: 600; }
+input {
+  font: inherit;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+  width: 9.5em;
+  min-height: 44px;
+}
+input:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.error { color: var(--bad); min-height: 1.2em; margin: 8px 0 0; }
+.score { margin: 8px 0 0; font-weight: 600; color: var(--ink) !important; }
+
+footer { color: var(--muted); font-size: 0.85rem; padding-bottom: 32px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  button { transition: border-color 0.15s; }
+}
