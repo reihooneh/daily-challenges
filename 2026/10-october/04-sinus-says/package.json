@@ -1,0 +1,12 @@
+{
+  "name": "sinus-says",
+  "version": "1.0.0",
+  "description": "An ECG rhythm trainer that marks your method, not just your guess.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "start": "python3 -m http.server 8080"
+  },
+  "license": "MIT"
+}
