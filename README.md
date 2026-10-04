@@ -1,6 +1,6 @@
 # Daily Challenges
 
-A small, complete project every day, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
+Two small, complete projects every day, one in the morning and one in the evening, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
 
 **Projects:** 5 · **Languages so far:** C, Go, JavaScript, Python, Rust
 
