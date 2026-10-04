@@ -2,12 +2,13 @@
 
 Two small, complete projects every day, one in the morning and one in the evening, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
 
-**Projects:** 5 · **Languages so far:** C, Go, JavaScript, Python, Rust
+**Projects:** 6 · **Languages so far:** C, Go, JavaScript, Python, Ruby, Rust
 
 ## October 2026
 
 | Day | Project | What it does | Language | Field |
 |---|---|---|---|---|
+| 05 | [**Rankle**](2026/10-october/05-rankle/) | Counts the same ranked ballots under five voting rules, shows where they disagree, and hunts for spoiler candidates | Ruby | Social choice / civic tech |
 | 04 | [**Sinus Says**](2026/10-october/04-sinus-says/) | ECG rhythm trainer that marks your method step by step, not just the final answer; every strip is generated from a shareable code | JavaScript | Medical education / signal processing |
 | 03 | [**Earprint**](2026/10-october/03-earprint/) | Turns a file's SHA-256 fingerprint into a melody, so you can hear whether two files match | C | Creative coding / security |
 | 02 | [**Huewise**](2026/10-october/02-huewise/) | Linter that finds colours which collide for colour-blind viewers and repairs them | Python | Accessibility |
