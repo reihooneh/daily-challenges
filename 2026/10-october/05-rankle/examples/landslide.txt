@@ -1,0 +1,3 @@
+6: Maple > Oak > Pine
+3: Oak > Maple > Pine
+1: Pine > Maple > Oak

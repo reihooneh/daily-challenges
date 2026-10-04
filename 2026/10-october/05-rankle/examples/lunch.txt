@@ -1,0 +1,4 @@
+# Nine friends choosing where to eat. Nobody can win this argument.
+4: Pizza > Sushi > Tacos
+3: Sushi > Tacos > Pizza
+2: Tacos > Pizza > Sushi

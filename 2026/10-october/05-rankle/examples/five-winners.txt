@@ -1,0 +1,8 @@
+# 55 voters choose between five candidates.
+# A classic from voting theory: each of the five rules elects someone different.
+18: Ana > Dev > Eli > Cai > Bo
+12: Bo > Eli > Dev > Cai > Ana
+10: Cai > Bo > Eli > Dev > Ana
+ 9: Dev > Cai > Eli > Bo > Ana
+ 4: Eli > Bo > Dev > Cai > Ana
+ 2: Eli > Cai > Dev > Bo > Ana
