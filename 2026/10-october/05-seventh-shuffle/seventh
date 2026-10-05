@@ -1,0 +1,4 @@
+#!/bin/sh
+# Runs Seventh Shuffle. Build first with: make
+dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+exec java -cp "$dir/build/classes" seventh.Main "$@"
