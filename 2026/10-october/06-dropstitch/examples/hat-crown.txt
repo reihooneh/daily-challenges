@@ -1,0 +1,14 @@
+# Crown decreases for a simple hat, worked in the round.
+Cast on 64
+
+Rounds 1-4: (K2, P2) 16 times.
+Round 5: Knit.
+Round 6: *K6, K2tog; rep from * to end. (56 sts)
+Round 7: Knit.
+Round 8: *K5, K2tog; rep from * to end. (48 sts)
+Round 9: Knit.
+Round 10: *K4, K2tog; rep from * to end. (40 sts)
+Round 11: *K3, K2tog; rep from * to end. (32 sts)
+Round 12: *K2, K2tog; rep from * to end. (24 sts)
+Round 13: *K1, K2tog; rep from * to end. (16 sts)
+Round 14: K2tog across. (8 sts)

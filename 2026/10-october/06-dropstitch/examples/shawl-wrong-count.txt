@@ -1,0 +1,8 @@
+# A triangle shawl where the designer's stitch counts drifted.
+Cast on 5
+Row 1: K2, YO, K1, YO, K2 (7 sts)
+Row 2: K2, purl to last 2 sts, K2
+Row 3: K2, YO, K3, YO, K2 (9 sts)
+Row 4: K2, purl to last 2 sts, K2
+Row 5: K2, YO, knit to last 2 sts, YO, K2 (12 sts)
+Row 7: K2, YO, knit to last 2 sts, YO, K2 (13 sts)

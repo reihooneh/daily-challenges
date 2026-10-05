@@ -1,0 +1,9 @@
+# Feather lace scarf. Row 5 has a mistake: can you spot it before the linter does?
+Cast on 24 sts
+
+Row 1 (RS): K2, *YO, K2tog; rep from * to last 2 sts, K2. (24 sts)
+Row 2: K2, purl to last 2 sts, K2.
+Row 3: K2, *K2tog, YO; rep from * to last 2 sts, K2. (24 sts)
+Row 4: K2, purl to last 2 sts, K2.
+Row 5: K2, *YO, K2tog, K1; rep from * to last 2 sts, K2.
+Row 6: Knit.
