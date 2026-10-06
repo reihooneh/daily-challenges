@@ -336,7 +336,7 @@ func parseWish(text string, number int) (Wish, error) {
 		if day, ok := dayLookup[m[1]]; ok {
 			return Wish{Kind: NoDay, Day: day}, nil
 		}
-		if day, ok := dayLookup[m[1]+"s"]; ok { // "tues" loses its s to the plural rule
+		if day, ok := dayLookup[strings.TrimSuffix(m[1], "s")]; ok { // "no Fridays"
 			return Wish{Kind: NoDay, Day: day}, nil
 		}
 	}
