@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Least privilege: jobs can read the code and nothing else unless they say so.
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Format and vet
+        run: make lint
+      - name: Build the command-line tool and the WebAssembly binary
+        run: make build web
+      - name: Go tests (race detector on) and JavaScript tests
+        run: make test
+      - name: Fuzz the whole pipeline for 30 seconds
+        run: make fuzz
+      - name: The examples give the documented exit codes
+        run: |
+          ./picktwo examples/first-year.txt > /dev/null
+          ./picktwo examples/the-friday-problem.txt > /dev/null && exit 1 || test $? -eq 1
+          ./picktwo examples/impossible-pair.txt > /dev/null && exit 1 || test $? -eq 1
+
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: Build the site
+        run: |
+          make web
+          rm -rf web/tests web/package.json
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+      - id: deployment
+        uses: actions/deploy-pages@v4
