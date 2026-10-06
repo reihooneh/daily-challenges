@@ -1,0 +1,7 @@
+/dist/
+/web/picktwo.wasm
+/web/wasm_exec.js
+*.test
+*.out
+/picktwo
+node_modules/
