@@ -83,6 +83,16 @@ go test ./...
 
 13 tests check sunrise and sunset against a published almanac (including across a daylight-saving change), day length at the equator on the equinox, polar night and midnight sun in both hemispheres, Moon phases against the real 2026 eclipses, the phase names, the Moon drawing, and the CLI's error messages. Coverage is about 95%.
 
+## Security
+
+Skyglass is a small calculator, and it is kept that way on purpose.
+
+- **Every input is checked.** Latitude must be -90 to 90, longitude -180 to 180, dates must be real `YYYY-MM-DD` dates, and time zones must be ones the system knows. Anything else gives a one-line error and exit code 2.
+- **Nothing dangerous in reach.** It reads no files, makes no network connections and runs no other programs. Everything is computed from the numbers you give it.
+- **No dependencies:** Go's standard library only.
+
+**Known limits:** the results are estimates (see Accuracy below), so don't use them for navigation or anything safety-critical. No software can promise it is 100% secure.
+
 ## Accuracy
 
 Sun times are within about 2 minutes outside the polar regions. The Moon phase uses the average length of a lunar month, so phase times can be off by up to about half a day, which is fine for a phase name and a drawing.

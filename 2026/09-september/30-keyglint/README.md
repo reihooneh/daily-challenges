@@ -81,6 +81,18 @@ cargo test
 
 14 tests cover entropy, masking, every rule, word boundaries, placeholders, the ignore marker, line and column numbers, and the CLI (folder skipping, JSON output, exit codes, and a check that raw secrets are never printed).
 
+## Security
+
+Keyglint reads files it knows nothing about, and its whole job is handling secrets, so it is careful with both.
+
+- **Secrets are never printed in full.** Every finding is masked before it reaches the screen or the JSON output, and a test checks that no raw secret appears in either.
+- **Bounded reading.** Files over 1 MB and binary files are skipped, so a huge or odd file can't exhaust memory.
+- **Symbolic links are not followed,** so a link inside a project can't lead the scan to files outside it.
+- **Read-only.** It never changes, deletes or uploads anything, and makes no network connections.
+- **Safe Rust, no dependencies.** There is no `unsafe` code and nothing third-party to trust.
+
+**Known limits:** it can't prove a project is free of secrets (see Limitations below), and no software can promise it is 100% secure.
+
 ## Limitations
 
 Keyglint uses rules and entropy, so it can miss unusual secrets and occasionally flag a random-looking value that isn't secret. It's a safety net, not a guarantee. If a real key ever leaks, **revoke it with the provider**: deleting the commit is not enough.
