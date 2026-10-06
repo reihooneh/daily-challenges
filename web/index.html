@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Pick Two: a timetable planner that tells you why you can't have everything, and what to give up.">
+  <title>Pick Two</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="masthead">
+    <div class="wrap">
+      <p class="kicker">Timetable planner</p>
+      <h1>Pick Two</h1>
+      <p class="lede">Fridays off. No early starts. Three days on campus. When you can't have everything, this tells you exactly <em>why</em>, and the smallest thing to give up.</p>
+    </div>
+  </header>
+
+  <main class="wrap layout">
+    <section class="inputs" aria-label="Your classes and wishes">
+      <div class="panel">
+        <div class="panel-head">
+          <h2><span class="step">1</span> Your classes</h2>
+          <label class="sample">Try an example
+            <select id="sample">
+              <option value="friday">The Friday problem</option>
+              <option value="firstyear">First-year science</option>
+              <option value="pair">Two courses that clash</option>
+            </select>
+          </label>
+        </div>
+        <label class="hint" for="courses">One course per block. List each class with its possible times, separated by <code>|</code>. Use <code>+</code> when one choice meets more than once a week.</label>
+        <textarea id="courses" rows="14" spellcheck="false" autocomplete="off" autocapitalize="off" maxlength="40000"></textarea>
+      </div>
+
+      <div class="panel">
+        <h2><span class="step">2</span> Your wishes</h2>
+        <fieldset class="days">
+          <legend>No classes on</legend>
+          <div id="no-days" class="chips"></div>
+        </fieldset>
+        <div class="wish"><label><input type="checkbox" id="before-on"> Nothing before</label> <input type="time" id="before-time" value="10:00" aria-label="Earliest start"></div>
+        <div class="wish"><label><input type="checkbox" id="after-on"> Nothing after</label> <input type="time" id="after-time" value="18:00" aria-label="Latest finish"></div>
+        <div class="wish"><label><input type="checkbox" id="days-on"> At most</label> <input type="number" id="days-n" min="1" max="7" value="3" aria-label="Days on campus"> days on campus</div>
+        <div class="wish"><label><input type="checkbox" id="hours-on"> At most</label> <input type="number" id="hours-n" min="1" max="24" value="6" aria-label="Hours of class per day"> hours of class a day</div>
+        <div class="wish"><label><input type="checkbox" id="gap-on"> At least</label> <input type="number" id="gap-n" min="1" max="240" value="15" aria-label="Minutes between classes"> minutes between classes</div>
+        <div class="wish"><label><input type="checkbox" id="lunch-on"> A break of</label> <input type="number" id="lunch-n" min="1" max="240" value="45" aria-label="Break length in minutes"> min between <input type="time" id="lunch-from" value="12:00" aria-label="Break window start"> and <input type="time" id="lunch-to" value="14:00" aria-label="Break window end"></div>
+        <label class="hint" for="busy">Times you're busy (work, sport, caring), one per line, like <code>Tue 14:00-18:00 work</code></label>
+        <textarea id="busy" rows="2" spellcheck="false" autocomplete="off" maxlength="2000"></textarea>
+        <div class="actions">
+          <button type="button" id="share">Copy link to this plan</button>
+          <span id="share-note" class="note" role="status"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="results" aria-label="Result">
+      <div id="verdict" class="verdict" role="status" aria-live="polite">Loading the planner…</div>
+      <div id="why" class="panel why" hidden>
+        <h2>Why it can't work</h2>
+        <p class="hint">These can't all be true at once. Each one matters: without any single one of them, the rest fit together.</p>
+        <ul id="conflict" class="conflict"></ul>
+      </div>
+      <div id="ways" class="panel" hidden>
+        <h2>Ways out</h2>
+        <p class="hint" id="ways-hint">The smallest things you could give up. Pick one to see the timetable you'd get.</p>
+        <div id="way-list" class="way-list"></div>
+      </div>
+      <div id="plan" class="panel" hidden>
+        <div class="panel-head">
+          <h2 id="plan-title">Your timetable</h2>
+          <p id="plan-stats" class="stats"></p>
+        </div>
+        <div class="grid-scroll"><div id="grid" class="grid"></div></div>
+        <details>
+          <summary>Show as a list</summary>
+          <table id="plan-table"><thead><tr><th scope="col">Day</th><th scope="col">Time</th><th scope="col">Course</th><th scope="col">Class</th></tr></thead><tbody></tbody></table>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap foot">
+    <p>Everything runs in your browser. Your timetable is never uploaded, stored or tracked. Always confirm class times with your university before enrolling.</p>
+  </footer>
+  <noscript><p class="wrap">Pick Two needs JavaScript and WebAssembly to run the planner.</p></noscript>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
