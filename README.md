@@ -2,12 +2,13 @@
 
 Two small, complete projects every day, one in the morning and one in the evening, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
 
-**Projects:** 9 · **Languages so far:** C, Go, Java, JavaScript, Perl, Python, Ruby, Rust, TypeScript
+**Projects:** 10 · **Languages so far:** C, Go, Java, JavaScript, Perl, PHP, Python, Ruby, Rust, TypeScript
 
 ## October 2026
 
 | Day | Project | What it does | Language | Field |
 |---|---|---|---|---|
+| 07 | [**Heavy Twin**](2026/10-october/07-heavy-twin/) | Predicts the isotope pattern of a molecule, explains each peak, and reads a pattern backwards into clues about the formula | PHP | Chemistry / mass spectrometry |
 | 06 | [**Strandbox**](2026/10-october/06-strandbox/) | Stores a file as DNA sequences with no repeated bases, then rebuilds it from shuffled, lost and misread strands | Perl | Bioinformatics / information theory |
 | 06 | [**Dropstitch**](2026/10-october/06-dropstitch/) | Linter for knitting patterns: parses written instructions and finds the row where the stitch count stops adding up | TypeScript | Parsing / craft tech |
 | 05 | [**Seventh Shuffle**](2026/10-october/05-seventh-shuffle/) | Shuffle detective: reads a deck order and works out how many riffle shuffles it really had, using exact mathematics | Java | Probability / card games |
