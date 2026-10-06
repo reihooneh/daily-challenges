@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+spl_autoload_register(static function (string $class): void {
+    // Only our own five classes can ever be loaded: no path is built from input.
+    $files = ['HeavyTwin\\Cli' => 'Cli', 'HeavyTwin\\Elements' => 'Elements', 'HeavyTwin\\Formula' => 'Formula',
+        'HeavyTwin\\FormulaException' => 'Formula', 'HeavyTwin\\Pattern' => 'Pattern', 'HeavyTwin\\Reader' => 'Reader'];
+    if (isset($files[$class])) {
+        require_once __DIR__ . '/../src/' . $files[$class] . '.php';
+    }
+});
+
+exit(HeavyTwin\Cli::run(array_slice($argv, 1), STDOUT, STDERR));
