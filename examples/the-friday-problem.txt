@@ -1,0 +1,19 @@
+# Fridays off, sleep-ins, and only three days on campus.
+# This semester you can have any two of those. Invented courses and times.
+
+COMP1010 Programming Fundamentals
+  Lecture: Mon 10:00-12:00
+  Tutorial: Mon 09:00-10:00 | Thu 14:00-15:00 | Fri 13:00-14:00
+  Lab: Mon 13:00-15:00 | Wed 16:00-18:00
+
+BIOL1020 Molecules, Cells and Genes
+  Lecture: Wed 10:00-12:00
+  Lab: Wed 13:00-16:00 | Mon 15:00-18:00
+
+MATH1030 Calculus and Linear Algebra
+  Lecture: Tue 11:00-13:00 | Fri 10:00-12:00
+  Tutorial: Tue 14:00-15:00 | Wed 12:00-13:00 | Fri 12:00-13:00
+
+wish: no classes on Fri
+wish: nothing before 10:00
+wish: at most 3 days on campus

@@ -1,0 +1,22 @@
+# A first-year science load. Invented courses and times.
+
+COMP1010 Programming Fundamentals
+  Lecture: Mon 10:00-12:00 + Wed 10:00-11:00 | Tue 14:00-16:00 + Thu 14:00-15:00
+  Tutorial: Mon 13:00-14:00 | Tue 09:00-10:00 | Wed 15:00-16:00 | Thu 11:00-12:00 | Fri 10:00-11:00
+  Lab: Mon 14:00-16:00 | Wed 12:00-14:00 | Thu 16:00-18:00 | Fri 13:00-15:00
+
+BIOL1020 Molecules, Cells and Genes
+  Lecture: Tue 10:00-12:00 + Thu 10:00-11:00 | Mon 16:00-18:00 + Wed 16:00-17:00
+  Lab: Tue 13:00-16:00 | Wed 09:00-12:00 | Fri 09:00-12:00
+  Tutorial: Mon 09:00-10:00 | Thu 13:00-14:00 | Fri 14:00-15:00
+
+MATH1030 Calculus and Linear Algebra
+  Lecture: Mon 12:00-13:00 + Wed 14:00-15:00 + Thu 12:00-13:00 | Tue 16:00-17:00 + Wed 11:00-12:00 + Fri 12:00-13:00
+  Tutorial: Tue 12:00-13:00 | Wed 13:00-14:00 | Thu 15:00-16:00 | Fri 11:00-12:00
+
+CHEM1040 Chemistry for Life Sciences
+  Lecture: Wed 09:00-10:00 + Fri 09:00-10:00 | Tue 17:00-18:00 + Thu 17:00-18:00
+  Lab: Mon 09:00-12:00 | Thu 09:00-12:00 | Fri 14:00-17:00
+
+wish: nothing before 09:00
+wish: nothing after 18:00

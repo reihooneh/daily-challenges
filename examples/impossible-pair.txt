@@ -1,0 +1,14 @@
+# Two courses that cannot be taken together, whatever you wish for.
+
+PHYS2001 Quantum Mechanics
+  Lecture: Mon 10:00-12:00 + Wed 10:00-12:00
+
+STAT2002 Statistical Inference
+  Lecture: Wed 11:00-13:00 + Fri 11:00-12:00
+  Tutorial: Thu 09:00-10:00 | Thu 15:00-16:00
+
+HIST1003 The Modern World
+  Lecture: Tue 13:00-15:00
+  Tutorial: Tue 15:00-16:00 | Fri 13:00-14:00
+
+wish: no classes on Fri
