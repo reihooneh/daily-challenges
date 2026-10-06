@@ -105,7 +105,7 @@ These are called **minimal correction sets**. Conflicts and corrections are two 
 
 ### One engine, two targets
 
-Go can compile the same source to a normal program or to **WebAssembly**, a compact binary format browsers can run at near-native speed. `cmd/wasm/main.go` is 40 lines: it registers one JavaScript-visible function that takes a string and returns a JSON string. Keeping the boundary that narrow means there is only one place where data crosses between languages.
+Go can compile the same source to a normal program or to **WebAssembly**, a compact binary format browsers can run at near-native speed. `cmd/wasm/main.go` is about 35 lines: it registers one JavaScript-visible function that takes a string and returns a JSON string. Keeping the boundary that narrow means there is only one place where data crosses between languages.
 
 ### Staying responsive and bounded
 
