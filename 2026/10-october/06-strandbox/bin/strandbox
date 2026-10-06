@@ -1,0 +1,151 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+use FindBin;
+use lib "$FindBin::Bin/../lib";
+
+use Fcntl qw(O_WRONLY O_CREAT O_EXCL O_TRUNC);
+use Getopt::Long qw(GetOptionsFromArray);
+use Strandbox::Archive qw(encode decode damage read_fasta write_fasta stats);
+
+my $USAGE = <<'TEXT';
+Usage:
+  strandbox encode FILE [-o OUT.fasta]     store a file as DNA (FASTA text)
+  strandbox decode FASTA [-o OUT]          rebuild the file from DNA
+  strandbox stats  FASTA                   base balance, repeats and size
+  strandbox damage FASTA [--loss P] [--errors P] [--copies N] [--seed N] [-o OUT.fasta]
+                                           simulate lost and misread strands
+                                           (defaults: 5% lost, 0.1% of bases
+                                           misread, 3 reads of every strand)
+
+Use - as the input name to read standard input. Output goes to standard
+output unless -o is given; -o never overwrites a file unless --force is used.
+
+Exit codes: 0 success, 1 the file could not be rebuilt, 2 bad input or usage.
+TEXT
+
+exit main(@ARGV);
+
+sub main {
+    my @args    = @_;
+    my $command = shift @args // '';
+    if ( $command eq '-h' || $command eq '--help' ) { print $USAGE; return 0; }
+
+    my %opt = ( loss => 0.05, errors => 0.001, copies => 3, seed => 1 );
+    my $parsed = eval {
+        local $SIG{__WARN__} = sub { die $_[0] };
+        GetOptionsFromArray( \@args, \%opt, 'o=s', 'force', 'loss=f', 'errors=f', 'copies=i', 'seed=i' );
+    };
+    return usage_error('unknown or malformed option') unless $parsed;
+    return usage_error('expected exactly one input file') unless @args == 1;
+    my %known = map { $_ => 1 } qw(encode decode stats damage);
+    return usage_error('unknown command') unless $known{$command};
+
+    my $result = eval { run( $command, $args[0], \%opt ) };
+    if ( !defined $result ) {
+        # Our own messages end in a newline. Anything else is unexpected, and
+        # its details are not shown.
+        my $message = $@ =~ /\A([^\n]{1,200})\n\z/ ? $1 : 'unexpected internal error';
+        print STDERR "strandbox: $message\n";
+        return 2;
+    }
+    return $result;
+}
+
+sub usage_error {
+    my ($message) = @_;
+    print STDERR "strandbox: $message\n\n$USAGE";
+    return 2;
+}
+
+sub run {
+    my ( $command, $input, $opt ) = @_;
+
+    if ( $command eq 'encode' ) {
+        my $data   = slurp( $input, Strandbox::Archive::MAX_FILE );
+        my @oligos = encode($data);
+        emit( write_fasta(@oligos), $opt );
+        my $s = stats(@oligos);
+        printf STDERR "Stored %d bytes in %d oligos (%d bases). GC %.0f%%, longest repeat %d.\n",
+            length $data, $s->{oligos}, $s->{bases}, 100 * $s->{gc}, $s->{longest_run};
+        return 0;
+    }
+
+    my @oligos = read_fasta( slurp( $input, Strandbox::Archive::MAX_FASTA ) );
+    die "no sequences found in the input\n" unless @oligos;
+
+    if ( $command eq 'stats' ) {
+        my $s = stats(@oligos);
+        printf "Oligos:          %d\n",                 $s->{oligos};
+        printf "Bases:           %d\n",                 $s->{bases};
+        printf "GC content:      %.1f%% overall (%.0f%% to %.0f%% per oligo)\n", 100 * $s->{gc}, 100 * $s->{gc_low}, 100 * $s->{gc_high};
+        printf "Longest repeat:  %d base%s in a row\n", $s->{longest_run}, $s->{longest_run} == 1 ? '' : 's';
+        return 0;
+    }
+
+    if ( $command eq 'damage' ) {
+        for my $name (qw(loss errors)) {
+            die "--$name must be a probability between 0 and 1\n" unless $opt->{$name} >= 0 && $opt->{$name} <= 1;
+        }
+        die "--seed must be between 0 and 4294967295\n" unless $opt->{seed} >= 0 && $opt->{seed} <= 0xFFFFFFFF;
+        die "--copies must be between 1 and 50\n" unless $opt->{copies} >= 1 && $opt->{copies} <= 50;
+        srand $opt->{seed};    # repeatable on purpose: this is a simulation, not security
+        my @aged = damage( \@oligos, $opt->{loss}, $opt->{errors}, $opt->{copies}, sub { rand } );
+        emit( write_fasta(@aged), $opt );
+        printf STDERR "%d strands in, %d reads out (%d reads of each, some lost).\n", scalar @oligos, scalar @aged, $opt->{copies};
+        return 0;
+    }
+
+    my $report = decode(@oligos);
+    printf STDERR "Read %d strands: %d damaged, %d duplicate, %d rebuilt from parity.\n",
+        $report->{total}, $report->{damaged}, $report->{duplicates}, scalar @{ $report->{recovered} };
+    if ( !defined $report->{data} ) {
+        print STDERR "strandbox: $report->{error}\n";
+        printf STDERR "Missing oligo numbers: %s\n", join ', ', @{ $report->{missing} }[ 0 .. ( @{ $report->{missing} } > 20 ? 19 : $#{ $report->{missing} } ) ]
+            if @{ $report->{missing} };
+        return 1;
+    }
+    emit( $report->{data}, $opt );
+    printf STDERR "Rebuilt %d bytes. Checksum matches.\n", length $report->{data};
+    return 0;
+}
+
+# Reads at most $limit + 1 bytes, so a huge file is never loaded whole.
+sub slurp {
+    my ( $path, $limit ) = @_;
+    my $handle;
+    if ( $path eq '-' ) {
+        $handle = \*STDIN;
+    }
+    else {
+        die "cannot read that file\n" unless -f $path && open $handle, '<', $path;    # 3-argument open: the name is never interpreted
+    }
+    binmode $handle;
+    my $data = '';
+    while (1) {
+        my $got = read $handle, $data, 65536, length $data;
+        die "cannot read that file\n" unless defined $got;
+        last if $got == 0;
+        die "input is larger than $limit bytes\n" if length $data > $limit;
+    }
+    return $data;
+}
+
+sub emit {
+    my ( $content, $opt ) = @_;
+    my $handle;
+    if ( defined $opt->{o} ) {
+        # O_EXCL: fail if the name already exists, including as a symlink.
+        my $flags = O_WRONLY | O_CREAT | ( $opt->{force} ? O_TRUNC : O_EXCL );
+        sysopen $handle, $opt->{o}, $flags, 0644
+            or die( $opt->{force} ? "cannot write the output file\n" : "the output file already exists (use --force to replace it)\n" );
+    }
+    else {
+        $handle = \*STDOUT;
+    }
+    binmode $handle;
+    print {$handle} $content or die "cannot write the output\n";
+    if ( defined $opt->{o} ) { close $handle or die "cannot write the output file\n"; }
+    return;
+}
