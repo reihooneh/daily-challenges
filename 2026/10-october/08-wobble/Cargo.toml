@@ -1,0 +1,11 @@
+[package]
+name = "wobble"
+version = "0.1.0"
+edition = "2021"
+description = "Simulates a PID control loop and explains, in plain words, why it wobbles"
+license = "MIT"
+
+[dependencies]
+
+[lints.rust]
+unsafe_code = "forbid"
