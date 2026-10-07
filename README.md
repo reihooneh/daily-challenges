@@ -2,12 +2,13 @@
 
 Two small, complete projects every day, one in the morning and one in the evening, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
 
-**Projects:** 11 · **Languages so far:** Bash, C, Go, Java, JavaScript, Perl, PHP, Python, Ruby, Rust, TypeScript
+**Projects:** 12 · **Languages so far:** Bash, C, Go, Java, JavaScript, Perl, PHP, Python, Ruby, Rust, TypeScript
 
 ## October 2026
 
 | Day | Project | What it does | Language | Field |
 |---|---|---|---|---|
+| 08 | [**Wobble**](2026/10-october/08-wobble/) | Simulates a PID control loop, measures the response and explains in plain words why it wobbles and which gain to change | Rust | Robotics / control systems |
 | 07 | [**Last Digit**](2026/10-october/07-last-digit/) | Identifies what kind of number you have (barcode, card, ISBN, ABN, IBAN...), checks its check digit and shows the arithmetic | Bash | Data validation / coding theory |
 | 07 | [**Heavy Twin**](2026/10-october/07-heavy-twin/) | Predicts the isotope pattern of a molecule, explains each peak, and reads a pattern backwards into clues about the formula | PHP | Chemistry / mass spectrometry |
 | 06 | [**Strandbox**](2026/10-october/06-strandbox/) | Stores a file as DNA sequences with no repeated bases, then rebuilds it from shuffled, lost and misread strands | Perl | Bioinformatics / information theory |
