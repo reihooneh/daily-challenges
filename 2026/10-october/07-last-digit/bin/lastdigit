@@ -1,0 +1,149 @@
+#!/usr/bin/env bash
+# Last Digit: works out what kind of number you have and whether its check
+# digit is right, showing the arithmetic.
+set -euo pipefail
+
+HERE=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
+# shellcheck source=lib/schemes.sh
+source "$HERE/../lib/schemes.sh"
+
+MAX_LENGTH=40 # characters typed, including spaces and hyphens
+
+usage() {
+  cat <<'TEXT'
+Usage:
+  lastdigit NUMBER          check a number, e.g.  lastdigit 978-0-306-40615-7
+  lastdigit -               type the number at a hidden prompt (keeps it out of
+                            your shell history and off the screen)
+  lastdigit --quiet NUMBER  verdicts only, no arithmetic
+  lastdigit --list          the kinds of number it knows
+
+Spaces and hyphens are ignored. Nothing is stored or sent anywhere.
+Exit codes: 0 valid as at least one kind, 1 not valid as any kind, 2 bad input.
+TEXT
+}
+
+fail() {
+  printf 'lastdigit: %s\n' "$1" >&2
+  exit 2
+}
+
+# What is wrong, in words, for a scheme whose check failed.
+mismatch() {
+  local id=$1 n=$2 expected
+  expected=$("expected_$id" "$n")
+  case $id in
+    abn) echo "the first two digits are its check digits, and they do not fit the other nine" ;;
+    iban) echo "its check digits (characters 3 and 4) should be $expected, not ${n:2:2}" ;;
+    medicare) echo "its ninth digit should be $expected, not ${n:8:1}" ;;
+    tfn)
+      if [[ $expected == "?" ]]; then
+        echo "no last digit can make these first eight digits valid"
+      else
+        echo "its last digit should be $expected, not ${n: -1}"
+      fi
+      ;;
+    *) echo "its last digit should be $expected, not ${n: -1}" ;;
+  esac
+}
+
+# Swapping two neighbouring digits is the most common typing slip. List the
+# swaps that would make the number valid (at most three).
+swap_hints() {
+  local id=$1 n=$2 i swapped found=0
+  for ((i = 0; i < ${#n} - 1 && found < 3; i++)); do
+    [[ ${n:i:1} == "${n:i+1:1}" ]] && continue
+    swapped=${n:0:i}${n:i+1:1}${n:i:1}${n:i+2}
+    if "fits_$id" "$swapped" && "valid_$id" "$swapped"; then
+      echo "      or characters $((i + 1)) and $((i + 2)) were swapped: $swapped would be valid"
+      found=$((found + 1))
+    fi
+  done
+}
+
+main() {
+  local quiet=0 hidden=0 raw=""
+  case ${1:-} in
+    -h | --help)
+      usage
+      exit 0
+      ;;
+    --list)
+      local id
+      for id in "${SCHEMES[@]}"; do printf '%s\n' "${SCHEME_NAME[$id]}"; done
+      exit 0
+      ;;
+    --quiet)
+      quiet=1
+      shift
+      ;;
+  esac
+  if (($# != 1)); then
+    usage >&2
+    exit 2
+  fi
+
+  if [[ $1 == "-" ]]; then
+    hidden=1
+    quiet=1
+    if [[ -t 0 ]]; then
+      IFS= read -r -s -n "$MAX_LENGTH" -p "Number (hidden): " raw || true
+      echo >&2
+    else
+      # Read at most MAX_LENGTH + 1 characters: never the whole of a huge stream.
+      IFS= read -r -n $((MAX_LENGTH + 1)) raw || true
+    fi
+  else
+    raw=$1
+  fi
+
+  ((${#raw} <= MAX_LENGTH)) || fail "that is longer than $MAX_LENGTH characters"
+  # Allow-list first: letters, digits, spaces and hyphens only.
+  [[ $raw =~ ^[A-Za-z0-9\ -]+$ ]] || fail "a number may only contain digits, letters, spaces and hyphens"
+  local n=${raw//[ -]/}
+  n=${n^^}
+  ((${#n} >= 2)) || fail "that is too short to have a check digit"
+
+  local shown=$raw
+  if ((hidden)); then
+    # Typed at the hidden prompt: show only the ends.
+    shown="${n:0:2}$(printf '%*s' $((${#n} - 4)) '' | tr ' ' '*')${n: -2}"
+  fi
+  printf '%s   (%d characters)\n\n' "$shown" "${#n}"
+
+  local id line
+  local -a passing=() failing=()
+  for id in "${SCHEMES[@]}"; do
+    "fits_$id" "$n" || continue
+    if "valid_$id" "$n"; then passing+=("$id"); else failing+=("$id"); fi
+  done
+
+  if ((${#passing[@]} + ${#failing[@]} == 0)); then
+    echo "No kind of number this tool knows has this shape. Try: lastdigit --list"
+    exit 1
+  fi
+
+  if ((${#passing[@]} == 0)); then
+    # Nothing passed, so say exactly what is wrong for each kind it could be.
+    for id in "${failing[@]}"; do
+      printf '  invalid  %s: %s\n' "${SCHEME_NAME[$id]}" "$(mismatch "$id" "$n")"
+      ((quiet)) || swap_hints "$id" "$n"
+    done
+    printf '\nNot valid as anything. One wrong or swapped digit is the usual cause.\n'
+    exit 1
+  fi
+
+  for id in "${passing[@]}"; do
+    printf '  VALID    %s\n' "${SCHEME_NAME[$id]}"
+    if ((!quiet)); then
+      while IFS= read -r line; do printf '      %s\n' "$line"; done < <("explain_$id" "$n")
+    fi
+  done
+  for id in "${failing[@]}"; do
+    printf '  not a    %s\n' "${SCHEME_NAME[$id]}"
+  done
+  echo
+  echo "A valid check digit means the number is well-formed. It does not mean the number exists or belongs to anyone."
+}
+
+main "$@"
