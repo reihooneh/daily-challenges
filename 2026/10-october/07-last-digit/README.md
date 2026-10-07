@@ -74,7 +74,7 @@ Exit codes: `0` valid as at least one kind, `1` not valid as any kind, `2` bad i
 
 ## Tech
 
-Bash 4+ only. No external programs are needed to check a number: all the arithmetic is done by the shell itself.
+Bash 4+ and the standard core utilities. All the arithmetic is done by the shell itself; nothing needs installing.
 
 ## Tests
 
