@@ -1,0 +1,20 @@
+{
+  "screen": { "width": 390, "height": 844, "device": "phone" },
+  "elements": [
+    { "id": "back",     "label": "Back",           "x": 8,   "y": 54,  "w": 40,  "h": 40 },
+    { "id": "call",     "label": "Call",           "x": 290, "y": 54,  "w": 44,  "h": 44 },
+    { "id": "info",     "label": "Chat info",      "x": 338, "y": 54,  "w": 44,  "h": 44 },
+    { "id": "search",   "label": "Search chat",    "x": 16,  "y": 110, "w": 358, "h": 36 },
+    { "id": "attach",   "label": "Attach",         "x": 12,  "y": 780, "w": 44,  "h": 44 },
+    { "id": "message",  "label": "Message box",    "x": 60,  "y": 780, "w": 270, "h": 44 },
+    { "id": "send",     "label": "Send",           "x": 334, "y": 780, "w": 44,  "h": 44 },
+    { "id": "emoji",    "label": "Emoji",          "x": 300, "y": 790, "w": 26,  "h": 26 }
+  ],
+  "tasks": [
+    { "name": "Send a reply",     "steps": ["message", "send"],      "per_day": 60 },
+    { "name": "Go back to chats", "steps": ["back"],                 "per_day": 25 },
+    { "name": "Start a call",     "steps": ["call"],                 "per_day": 2 },
+    { "name": "Send a photo",     "steps": ["attach", "send"],       "per_day": 4 },
+    { "name": "Find a message",   "steps": ["search", "message"],    "per_day": 1 }
+  ]
+}
