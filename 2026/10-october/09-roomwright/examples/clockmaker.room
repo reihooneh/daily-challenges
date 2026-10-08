@@ -1,0 +1,17 @@
+# The Clockmaker's Study: a small room with one deliberate design mistake.
+title  The Clockmaker's Study
+players 4
+limit  45
+
+start  torn_note lamp
+
+#      name       min    needs (* = used up)        gives
+puzzle drawer      5   : torn_note               -> brass_key
+puzzle painting    6   : lamp                    -> clock_hint
+puzzle bookshelf   7   :                         -> cipher_wheel
+puzzle letter      4   : cipher_wheel            -> safe_code
+puzzle safe        3   : safe_code               -> gear
+puzzle chest       4   : brass_key*              -> pendulum
+puzzle cabinet     3   : brass_key*              -> old_coin
+puzzle clock       8   : gear pendulum clock_hint -> door_code
+puzzle door        2   : door_code               -> EXIT
