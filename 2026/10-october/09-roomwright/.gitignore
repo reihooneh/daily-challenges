@@ -1,0 +1,5 @@
+roomwright
+tests/test_room
+tests/roomwright_san
+*.o
+*.dSYM/
