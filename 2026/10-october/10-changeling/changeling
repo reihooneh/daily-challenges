@@ -1,0 +1,4 @@
+#!/bin/sh
+# Runs Changeling from this folder. Build first with: make
+here=$(dirname "$0")
+exec java -cp "$here/build/classes" changeling.Main "$@"
