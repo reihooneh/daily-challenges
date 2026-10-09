@@ -1,0 +1,16 @@
+# A Saturday stall at a school fete.
+title     Lemonade and cookies at the school fete
+budget    150           # dollars available for the float
+customers 120           # cash customers expected
+basket    1-2           # items each customer buys
+
+item lemonade      4.00  weight 5
+item cookie        2.50  weight 4
+item brownie       3.50  weight 3
+item lemonade_jug 10.00  weight 1
+
+# How people pay, in per cent.
+pays exact     20
+pays smallest  50
+pays 20        25       # fresh from the ATM
+pays 50         5
