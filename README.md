@@ -2,12 +2,13 @@
 
 Two small, complete projects every day, one in the morning and one in the evening, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
 
-**Projects:** 14 · **Languages so far:** Bash, C, Go, Java, JavaScript, Perl, PHP, Python, Ruby, Rust, TypeScript
+**Projects:** 15 · **Languages so far:** Bash, C, Go, Java, JavaScript, Perl, PHP, Python, Ruby, Rust, TypeScript
 
 ## October 2026
 
 | Day | Project | What it does | Language | Field |
 |---|---|---|---|---|
+| 09 | [**Castling**](2026/10-october/09-castling/) | Finds the smallest cast for a play and the safest way to double roles, leaving time for every costume change | JavaScript | Theatre / graph colouring |
 | 09 | [**Roomwright**](2026/10-october/09-roomwright/) | Checks an escape room design: finds moves that trap the team for good, dead puzzles, and how long the room takes for each team size | C | Game design / state-space search |
 | 08 | [**Reachmap**](2026/10-october/08-reachmap/) | Lints a screen layout for buttons that are too small, too close or out of thumb reach, and times each task with Fitts's law | Python | Human-computer interaction / UX |
 | 08 | [**Wobble**](2026/10-october/08-wobble/) | Simulates a PID control loop, measures the response and explains in plain words why it wobbles and which gain to change | Rust | Robotics / control systems |
