@@ -1,0 +1,21 @@
+# An original one-act play for a small touring company.
+title  The Lighthouse Keeper's Daughter
+change  1:30                      # time to get into most costumes
+between 0:30                      # blackout between scenes
+
+role ghost  change 3:00           # pale make-up takes a while
+role gull   change 0:45           # just a feathered cape
+
+# "nell>2:00" enters 2:00 into the scene; "tobias<1:30" leaves 1:30 before the end.
+scene 1    7:00 : keeper mara gull<4:00
+scene 2    5:30 : mara<2:00 tobias nell>1:00
+scene 3    6:00 : keeper inspector>2:00 tobias<2:30
+scene 4    4:00 : mara nell gull
+interval 15:00
+scene 5    8:00 : ghost keeper<3:00 mara
+scene 6    3:00 : inspector tobias fisherman>1:00
+scene 7    6:30 : mara nell<2:00 fisherman widow>3:00
+scene 8    5:00 : ghost>1:30 mara keeper tobias
+
+together gull ghost               # the director wants this double
+apart    mara nell                # the sisters must look different
