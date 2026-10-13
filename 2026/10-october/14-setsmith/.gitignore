@@ -1,0 +1,4 @@
+/setsmith
+*.test
+*.out
+coverage.html
