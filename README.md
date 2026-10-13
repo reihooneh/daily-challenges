@@ -2,12 +2,13 @@
 
 Two small, complete projects every day, one in the morning and one in the evening, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
 
-**Projects:** 17 · **Languages so far:** Bash, C, Go, Java, JavaScript, Perl, PHP, Python, Ruby, Rust, TypeScript
+**Projects:** 18 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Perl, PHP, Python, Ruby, Rust, TypeScript
 
 ## October 2026
 
 | Day | Project | What it does | Language | Field |
 |---|---|---|---|---|
+| 13 | [**Blackout**](2026/10-october/13-blackout/) | Checks a crossword grid against American or cryptic house rules and finds the fewest squares to change to fix it, keeping symmetry | C++ | Puzzle design / combinatorial search |
 | 10 | [**Lungful**](2026/10-october/10-lungful/) | Times a script for reading aloud by syllables, marks where to breathe in sentences too long for one breath, and flags tricky numbers and tongue-twisters | Ruby | Linguistics / public speaking |
 | 10 | [**Changeling**](2026/10-october/10-changeling/) | Plans a market stall's cash float: simulates hundreds of days to find which coins and notes to bring, and which price nudges cut the change you need | Java | Small business / simulation and optimisation |
 | 09 | [**Castling**](2026/10-october/09-castling/) | Finds the smallest cast for a play and the safest way to double roles, leaving time for every costume change | JavaScript | Theatre / graph colouring |
