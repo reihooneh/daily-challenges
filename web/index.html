@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self'; img-src 'self' blob: data:; media-src 'self' blob: mediastream:; connect-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Keep your most important secrets on paper, and read them back with any phone camera, even after a coffee stain.">
+  <title>Inkvault: paper backups your phone can read</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="brand">
+      <img src="icon.svg" alt="" width="44" height="44">
+      <div>
+        <h1>Inkvault</h1>
+        <p class="tagline">Your most important secrets, on paper. Read back by any phone camera, even after a coffee stain.</p>
+      </div>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="Inkvault">
+      <button role="tab" id="tab-make" aria-controls="make" aria-selected="true">Make a page</button>
+      <button role="tab" id="tab-read" aria-controls="read" aria-selected="false" tabindex="-1">Read a page</button>
+      <button role="tab" id="tab-lab" aria-controls="lab" aria-selected="false" tabindex="-1">Damage lab</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="make" role="tabpanel" aria-labelledby="tab-make">
+      <div class="columns">
+        <form id="make-form" class="panel" autocomplete="off">
+          <fieldset class="kind">
+            <legend>What to keep</legend>
+            <label><input type="radio" name="kind" value="text" checked> Text</label>
+            <label><input type="radio" name="kind" value="file"> A small file</label>
+          </fieldset>
+          <label class="field" id="text-field">
+            <span>Text</span>
+            <textarea id="secret" rows="7" maxlength="5000" spellcheck="false" placeholder="Recovery codes, a seed phrase, the Wi-Fi password, instructions for whoever needs them…"></textarea>
+          </label>
+          <label class="field" id="file-field" hidden>
+            <span>File (up to about 700 bytes after packing)</span>
+            <input type="file" id="file">
+          </label>
+          <div class="meter" aria-live="polite">
+            <div class="bar"><div id="fill"></div></div>
+            <span id="capacity-text">0 of 758 bytes</span>
+          </div>
+          <label class="field">
+            <span>Title printed on the page <em>(optional, not secret)</em></span>
+            <input id="title" type="text" maxlength="40" placeholder="Emergency kit, October 2026">
+          </label>
+          <label class="field">
+            <span>Passphrase <em>(optional, strongly recommended)</em></span>
+            <span class="row">
+              <input id="passphrase" type="text" maxlength="200" spellcheck="false" autocapitalize="off" placeholder="Leave empty for an unlocked page">
+              <button type="button" id="generate" class="quiet">Generate</button>
+            </span>
+          </label>
+          <p id="strength" class="hint" aria-live="polite">Anyone with the paper can read an unlocked page.</p>
+          <button type="submit" class="primary" id="make-button">Make the page</button>
+          <p id="make-error" class="error" role="alert" hidden></p>
+        </form>
+
+        <div class="panel preview">
+          <div id="sheet" class="sheet" aria-live="polite">
+            <p class="empty">Your page will appear here, ready to print.</p>
+          </div>
+          <div class="actions" id="sheet-actions" hidden>
+            <button type="button" id="print" class="primary">Print</button>
+            <button type="button" id="save-image">Save as image</button>
+            <button type="button" id="to-lab" class="quiet">Try to break it →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="read" role="tabpanel" aria-labelledby="tab-read" hidden>
+      <div class="columns">
+        <div class="panel">
+          <h2>Point your camera at the page</h2>
+          <p class="hint">All four corner squares need to be in view. Hold steady in good light; the page doesn't have to be straight.</p>
+          <div class="row">
+            <button type="button" id="camera" class="primary">Use the camera</button>
+            <label class="button">Choose a photo<input type="file" id="photo" accept="image/*" hidden></label>
+          </div>
+          <div class="viewer">
+            <video id="video" playsinline muted hidden></video>
+            <canvas id="view" hidden></canvas>
+          </div>
+          <p id="read-status" class="status" role="status"></p>
+        </div>
+        <div class="panel">
+          <h2>What's on the page</h2>
+          <form id="unlock" hidden autocomplete="off">
+            <label class="field"><span>This page is locked. Passphrase:</span>
+              <input id="unlock-pass" type="password" maxlength="200" spellcheck="false" autocapitalize="off"></label>
+            <button type="submit" class="primary">Unlock</button>
+          </form>
+          <div id="health" class="health" hidden>
+            <div class="bar"><div id="health-fill"></div></div>
+            <p id="health-text"></p>
+          </div>
+          <pre id="result" class="result" hidden></pre>
+          <div class="actions" id="result-actions" hidden>
+            <button type="button" id="copy">Copy</button>
+            <button type="button" id="download" hidden>Save file</button>
+            <button type="button" id="clear" class="quiet">Clear from screen</button>
+          </div>
+          <p id="read-error" class="error" role="alert" hidden></p>
+          <p class="empty" id="read-empty">Nothing read yet.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="lab" role="tabpanel" aria-labelledby="tab-lab" hidden>
+      <div class="columns">
+        <div class="panel">
+          <h2>Damage lab</h2>
+          <p class="hint">No printer? Damage a page here and watch the decoder read the fake photo. It uses your page, or a sample one.</p>
+          <div class="controls" id="controls">
+            <label>Rotation <output for="rotate"></output><input type="range" id="rotate" min="-180" max="180" step="5" value="10"></label>
+            <label>Perspective <output for="tilt"></output><input type="range" id="tilt" min="0" max="0.35" step="0.05" value="0.1"></label>
+            <label>Blur <output for="blur"></output><input type="range" id="blur" min="0" max="4" step="1" value="1"></label>
+            <label>Camera noise <output for="noise"></output><input type="range" id="noise" min="0" max="80" step="10" value="20"></label>
+            <label>Shadow <output for="shadow"></output><input type="range" id="shadow" min="0" max="0.7" step="0.1" value="0.3"></label>
+            <label>Coffee stains <output for="stains"></output><input type="range" id="stains" min="0" max="6" step="1" value="2"></label>
+            <label>Ink blot <output for="blot"></output><input type="range" id="blot" min="0" max="0.25" step="0.05" value="0.1"></label>
+            <label>Torn edge <output for="tear"></output><input type="range" id="tear" min="0" max="0.3" step="0.05" value="0"></label>
+          </div>
+          <div class="row"><button type="button" id="reshuffle" class="quiet">New stain positions</button></div>
+        </div>
+        <div class="panel">
+          <canvas id="lab-photo" width="760" height="1000" aria-label="The damaged photo"></canvas>
+          <p id="lab-status" class="status" role="status"></p>
+          <div class="health" id="lab-health"><div class="bar"><div id="lab-fill"></div></div><p id="lab-text"></p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Nothing leaves this page.</strong> Pages are made and read on your device: no uploads, no accounts, no tracking. The code is <a href="https://github.com/reihooneh/inkvault">open source</a>.</p>
+  </footer>
+</body>
+</html>
