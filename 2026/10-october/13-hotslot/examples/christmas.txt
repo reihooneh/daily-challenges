@@ -1,0 +1,11 @@
+# Christmas lunch for eight, one oven with three shelves.
+serve 13:00
+oven 3 shelves
+heats 15 per min    # how fast the oven warms up, in degrees C per minute
+cools 5 per min     # how fast it cools with the door ajar
+
+dish Roast lamb: 180C +-10, 90 min, rest 20, hold 15
+dish Roast potatoes: 200C +-15, 50 min, hold 10
+dish Stuffing: 180C +-20, 35 min, hold 30
+dish Yorkshire puddings: 220C +-10, 20 min
+dish Honey carrots: 190C +-20, 30 min, hold 20

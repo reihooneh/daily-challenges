@@ -1,0 +1,8 @@
+# A dinner party that asks too much of one oven.
+serve 19:30
+oven 2 shelves
+
+dish Pavlova: 120C +-5, 60 min
+dish Pizza: 250C +-10, 15 min
+dish Garlic bread: 200C +-20, 10 min, hold 30
+dish Croutons: 180C +-10, 10 min, hold 120
