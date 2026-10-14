@@ -1,0 +1,19 @@
+# A student share-house budget for the next 13 weeks (amounts in dollars).
+start 2026-11-01
+days 91
+balance 1600.00
+buffer 150.00          # never let the account drop below this
+
+income Pay            1180.00 fortnightly from 2026-11-12
+income Youth Allowance 420.00 fortnightly from 2026-11-05
+
+bill Rent             1100.00 monthly on 1 fixed
+bill Phone              55.00 monthly on 9 movable
+bill Car insurance     112.40 monthly on 10 movable
+bill Internet share     30.00 monthly on 12 movable
+bill Gym                24.95 fortnightly from 2026-11-03
+bill Electricity       265.00 quarterly from 2026-11-11
+bill Streaming          18.99 monthly on 28 movable
+bill Student loan      150.00 monthly on 8 movable
+
+spend Groceries and transport 34.00 daily
