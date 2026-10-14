@@ -1,0 +1,19 @@
+# A hot day on a ridge walk with two springs that can't be trusted.
+trail Ironbark Ridge (sample route)
+start-time 09:00          # leave this out and Dryleg suggests one
+temp 16 34                # overnight low, afternoon high, in degrees C
+light 05:50               # first light
+dark 19:40                # last light
+pace 4.0                  # km/h on the flat
+capacity 5.0              # litres you can carry
+reserve 0.5               # litres you always keep spare
+trust reliable            # count on reliable sources only (or: seasonal)
+
+water Trailhead tank      0.0           reliable
+point Lookout             4.5   +380
+water Fern Gully spring   8.0   -210    seasonal
+point Ironbark Saddle    12.5   +340
+water Hut tank           15.0   -120    reliable
+water Creek crossing     19.5   -260    unreliable
+point Bald Knob          23.0   +410
+end   Camp               27.5   -300
