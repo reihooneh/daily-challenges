@@ -2,12 +2,13 @@
 
 Two small, complete projects every day, one in the morning and one in the evening, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
 
-**Projects:** 20 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
+**Projects:** 21 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
 
 ## October 2026
 
 | Day | Project | What it does | Language | Field |
 |---|---|---|---|---|
+| 14 | [**Lowtide**](2026/10-october/14-lowtide/) | Forecasts the lowest point your bank balance will reach and finds the fewest bill due dates to move so it never dips below your buffer | TypeScript | Personal finance / branch and bound |
 | 14 | [**Setsmith**](2026/10-october/14-setsmith/) | Plans a band's running order: picks and orders songs to fit the slot, follow a good energy arc, rest the singer and cut on-stage retuning, provably optimally | Go | Live music / exact optimisation |
 | 13 | [**Hotslot**](2026/10-october/13-hotslot/) | Plans one oven so a whole meal is ready at once: when each dish goes in and out and what temperature every dish can share, or exactly why the menu can't fit | Lua | Cooking / constraint scheduling |
 | 13 | [**Blackout**](2026/10-october/13-blackout/) | Checks a crossword grid against American or cryptic house rules and finds the fewest squares to change to fix it, keeping symmetry | C++ | Puzzle design / combinatorial search |
