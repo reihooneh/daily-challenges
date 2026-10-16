@@ -1,0 +1,75 @@
+#!/usr/bin/env bash
+# Shelfmend: reads the call numbers of a shelf in the order they stand and works out the fewest
+# books to move to put it in order, and exactly where each one goes.
+# Usage: shelfmend [--scheme lc|dewey|auto] SHELF.txt     (or - for standard input)
+# shellcheck source-path=SCRIPTDIR
+set -euo pipefail
+
+HERE=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
+source "$HERE/../lib/callnumber.sh"
+source "$HERE/../lib/lis.sh"
+source "$HERE/../lib/report.sh"
+
+# MAX_BOOKS and MAX_LINE are read by lib/report.sh.
+# shellcheck disable=SC2034
+readonly MAX_BYTES=1048576 MAX_BOOKS=20000 MAX_LINE=160
+
+usage() {
+  cat <<'TXT'
+Usage: shelfmend [--scheme lc|dewey|auto] SHELF.txt
+       shelfmend [--scheme ...] -            read from standard input
+
+Each line is one book, in the order it stands on the shelf (left to right):
+  QA76.73 .P98 S65 2019 | Python for scientists       (the title after | is optional)
+Blank lines and lines starting with # are skipped.
+
+Exit codes: 0 the shelf is in order, 1 books to move, 2 bad input.
+TXT
+}
+
+die() { printf 'shelfmend: %s\n' "$1" >&2; exit 2; }
+
+main() {
+  local scheme=auto path='' arg
+  while (($#)); do
+    arg=$1
+    case $arg in
+      -h | --help) usage; return 0 ;;
+      --scheme)
+        (($# >= 2)) || die "--scheme needs lc, dewey or auto"
+        case $2 in lc | dewey | auto) scheme=$2 ;; *) die "--scheme must be lc, dewey or auto" ;; esac
+        shift 2
+        continue
+        ;;
+      -) [[ -z $path ]] || die "only one shelf at a time"; path=- ;;
+      -*) die "unknown option (see --help)" ;;
+      *) [[ -z $path ]] || die "only one shelf at a time"; path=$arg ;;
+    esac
+    shift
+  done
+  [[ -n $path ]] || { usage >&2; return 2; }
+
+  local text name
+  if [[ $path == - ]]; then
+    text=$(head -c $((MAX_BYTES + 1)); echo x)
+    name='standard input'
+  else
+    # Only regular files, and never more than the limit, so /dev/zero or a huge file can't hang it.
+    [[ -f $path && ! -L $path ]] || die "no such file (or not a regular file)"
+    text=$(head -c $((MAX_BYTES + 1)) -- "$path"; echo x)
+    name=${path##*/}
+    name=${name//[^A-Za-z0-9._-]/?}
+    name=${name:0:60}
+  fi
+  text=${text%x}
+  ((${#text} <= MAX_BYTES)) || die "the shelf list is larger than 1 MB"
+
+  shelf_read "$text" "$scheme" || exit 2
+  ((${#CALLS[@]} > 0)) || die "the shelf list has no books"
+  lis_keep KEYS
+  shelf_report "$name"
+  ((KEPT == ${#KEYS[@]})) && return 0
+  return 1
+}
+
+main "$@"

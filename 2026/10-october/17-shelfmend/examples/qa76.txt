@@ -1,0 +1,21 @@
+# Third shelf of the QA76 bay, scanned left to right on 17 October.
+QA76.73 .C15 K47 1988 | The C programming language
+QA76.73 .C153 S77 2013 | The C++ programming language
+QA76.73 .J38 B57 2018 | Effective Java
+QA76.73 .P98 L877 2013 | Learning Python
+QA76.9 .D3 E57 2016 | Fundamentals of database systems
+QA76.73 .P98 M38 2019 | Python crash course
+QA76.73 .P98 R36 2015 | Fluent Python
+QA76.73 .R83 F53 2008 | The Ruby programming language
+QA76.73 .S35 A2 1996 | Structure and interpretation of computer programs
+QA76.76 .A65 B38 2020 | Building mobile apps
+QA76.76 .C672 A42 2007 | Compilers: principles, techniques and tools
+QA76.6 .K64 1997 v.1 | The art of computer programming, vol. 1
+QA76.76 .O63 S56 2018 | Operating system concepts
+QA76.6 .K64 1997 v.3 | The art of computer programming, vol. 3
+QA76.9 .A43 C66 2009 | Introduction to algorithms
+QA76.9 .A43 S55 2008 | The algorithm design manual
+QA76.9 .D3 D3726 2004 | An introduction to database systems
+QA76.9 .H85 N57 2013 | The design of everyday things
+QA76.9 .D3 S5 2020 | Database system concepts
+QA76.9 .U83 K78 2014 | Don't make me think
