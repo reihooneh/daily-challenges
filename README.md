@@ -2,12 +2,13 @@
 
 Two small, complete projects every day, one in the morning and one in the evening, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
 
-**Projects:** 23 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
+**Projects:** 24 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
 
 ## October 2026
 
 | Day | Project | What it does | Language | Field |
 |---|---|---|---|---|
+| 17 | [**Shelfmend**](2026/10-october/17-shelfmend/) | Reads a library shelf's call numbers in the order they stand and finds the fewest books to move, and where each one goes | Bash | Library science / longest increasing subsequence |
 | 16 | [**Spoilheap**](2026/10-october/16-spoilheap/) | Checks an excavation's layer record: finds loops in the sequence and dating clues that can't all be true, and the fewest entries to re-check to fix them | PHP | Archaeology / graph algorithms |
 | 15 | [**Dryleg**](2026/10-october/15-dryleg/) | Plans how much water to carry on each stretch of a hot-day hike without counting on springs that might be dry, and finds the start time that keeps the load lightest | Perl | Outdoor safety / simulation |
 | 14 | [**Lowtide**](2026/10-october/14-lowtide/) | Forecasts the lowest point your bank balance will reach and finds the fewest bill due dates to move so it never dips below your buffer | TypeScript | Personal finance / branch and bound |
