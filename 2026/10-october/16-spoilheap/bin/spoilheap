@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+spl_autoload_register(static function (string $class): void {
+    // Only our own classes can ever be loaded: no path is built from input.
+    $files = ['Spoilheap\\Cli' => 'Cli', 'Spoilheap\\Record' => 'Record', 'Spoilheap\\RecordException' => 'Record',
+        'Spoilheap\\Matrix' => 'Matrix', 'Spoilheap\\Dating' => 'Dating', 'Spoilheap\\Report' => 'Report'];
+    if (isset($files[$class])) {
+        require_once __DIR__ . '/../src/' . $files[$class] . '.php';
+    }
+});
+
+exit(Spoilheap\Cli::run(array_slice($argv, 1), STDOUT, STDERR));

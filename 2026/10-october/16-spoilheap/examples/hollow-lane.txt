@@ -1,0 +1,21 @@
+# A made-up urban trench, recorded over two weeks by two diggers.
+site Hollow Lane, trench 2
+
+1001 above 1002          # topsoil over the demolition rubble
+1002 above 1003
+1002 above 1004
+1004 fills 1005          # pit fill
+1005 cuts 1003           # the pit was dug through the yard surface
+1003 above 1006
+1006 above 1007
+1007 same 1010           # one floor, numbered twice
+1010 above 1008
+1001 above 1003          # true, but already implied
+1008 above 1009
+
+find 1004 1840 clay pipe bowl with a maker's mark
+find 1003 1820 transfer-printed plate
+before 1002 1880 rubble from the 1880 rebuild
+date 1007 1750 1790 coin of George III
+find 1008 1690 tin-glazed tile
+find 1006 1810 bottle seal dated 1810
