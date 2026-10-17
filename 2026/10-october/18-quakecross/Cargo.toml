@@ -1,0 +1,14 @@
+[package]
+name = "quakecross"
+version = "1.0.0"
+edition = "2021"
+description = "Locates an earthquake from P and S arrival times, with an error ellipse, and names the station pick that doesn't fit"
+license = "MIT"
+
+[dependencies]
+
+[profile.release]
+overflow-checks = true
+
+[lints.rust]
+unsafe_code = "forbid"
