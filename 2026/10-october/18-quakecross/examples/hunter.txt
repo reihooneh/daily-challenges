@@ -1,0 +1,12 @@
+# Practice event: picks made by hand from seven made-up stations around the Hunter.
+event Hunter practice quake
+velocity p 6.0 s 3.5
+depth free
+
+station NEW1 -32.927 151.776 p 03:14:06.42 s 03:14:08.77
+station MAIT -32.733 151.556 p 03:14:07.67 s 03:14:10.92
+station CESS -32.833 151.357 p 03:14:08.00 s 03:14:13.92
+station SING -32.567 151.168 p 03:14:13.18 s 03:14:20.40
+station GOSF -33.426 151.343 p 03:14:13.08 s 03:14:20.19
+station TARE -31.9 152.46 p 03:14:26.70
+station DUNG -32.4 151.75 p 03:14:13.70 s 03:14:21.14
