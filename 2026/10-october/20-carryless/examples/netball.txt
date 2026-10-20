@@ -1,0 +1,17 @@
+# A made-up local netball competition.
+league Westside Saturday netball
+
+team Rovers
+team Dockers
+team Parkside
+team Hilltop Hawks
+team Riverbend
+team Northgate
+team Old Collegians
+team Saints
+team Wanderers
+team Comets
+
+# Rovers and Dockers play home games on the same courts.
+share Rovers Dockers
+share Saints Old Collegians
