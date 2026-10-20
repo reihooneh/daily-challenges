@@ -2,12 +2,13 @@
 
 Two small, complete projects every day, one in the morning and one in the evening, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
 
-**Projects:** 25 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
+**Projects:** 26 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
 
 ## October 2026
 
 | Day | Project | What it does | Language | Field |
 |---|---|---|---|---|
+| 20 | [**Carryless**](2026/10-october/20-carryless/) | Builds a fairer round-robin fixture: spreads the carry-over effect evenly, keeps home/away breaks low and never puts clubs that share a ground at home together | Python | Sports scheduling / combinatorics |
 | 18 | [**Quakecross**](2026/10-october/18-quakecross/) | Locates an earthquake from P and S arrival times, gives a 90% error ellipse, and names the station reading that doesn't fit | Rust | Seismology / nonlinear least squares |
 | 17 | [**Shelfmend**](2026/10-october/17-shelfmend/) | Reads a library shelf's call numbers in the order they stand and finds the fewest books to move, and where each one goes | Bash | Library science / longest increasing subsequence |
 | 16 | [**Spoilheap**](2026/10-october/16-spoilheap/) | Checks an excavation's layer record: finds loops in the sequence and dating clues that can't all be true, and the fewest entries to re-check to fix them | PHP | Archaeology / graph algorithms |
