@@ -1,0 +1,7 @@
+# The classic comma pump: C - Am - Dm - G - C, voiced so one note is always held.
+# Tuned pure with held notes kept still, it comes back a syntonic comma flat.
+C4 E4 G4
+A3 C4 E4
+A3 D4 F4
+G3 B3 D4
+G3 C4 E4
