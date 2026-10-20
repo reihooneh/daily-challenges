@@ -1,0 +1,21 @@
+{
+  "name": "tagback",
+  "version": "1.0.0",
+  "description": "Estimates how many animals live in a place from mark-recapture capture lists, checks the assumptions, and plans the next survey",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "tagback": "bin/tagback.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "check": "tsc --noEmit --allowJs --checkJs --strict --target es2022 --module nodenext --moduleResolution nodenext --types node src/*.js bin/*.js"
+  },
+  "devDependencies": {
+    "@types/node": "22.15.3",
+    "typescript": "5.8.3"
+  }
+}
