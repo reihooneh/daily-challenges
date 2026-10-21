@@ -2,12 +2,13 @@
 
 Small, complete projects, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
 
-**Projects:** 28 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
+**Projects:** 29 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
 
 ## October 2026
 
 | Day | Project | What it does | Language | Field |
 |---|---|---|---|---|
+| 22 | [**Ferryglide**](2026/10-october/22-ferryglide/) | Finds when a sea kayaker should leave so the tide helps: paddles every departure through a multi-leg route, ferry-gliding across side currents, and shows the windows within your limits | Java | Marine navigation / vector kinematics |
 | 21 | [**Tagback**](2026/10-october/21-tagback/) | Estimates an animal population from mark-recapture sessions with honest 95% intervals, and warns when trap-happy animals are making the count too low | JavaScript | Ecology / statistics |
 | 20 | [**Commadrift**](2026/10-october/20-commadrift/) | Tunes a chord progression so every chord is pure while held notes barely move, and shows the comma drift that pure tuning causes | C | Music acoustics / least squares |
 | 20 | [**Carryless**](2026/10-october/20-carryless/) | Builds a fairer round-robin fixture: spreads the carry-over effect evenly, keeps home/away breaks low and never puts clubs that share a ground at home together | Python | Sports scheduling / combinatorics |
