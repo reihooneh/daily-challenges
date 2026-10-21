@@ -1,0 +1,18 @@
+# A made-up example: crossing a tidal entrance and running down the coast.
+# The current table below is invented for illustration. For a real trip, copy the times from
+# the official current predictions for your area.
+trip Across the entrance and down to the beach
+paddle 3.5 kn
+window 05:00 to 12:00
+limit opposing 1.0 kn
+limit cross 2.0 kn
+station Entrance reference, flood 300
+event 03:40 slack
+event 06:55 flood 2.6
+event 10:05 slack
+event 13:20 ebb 2.9
+event 16:30 slack
+event 19:40 flood 2.4
+leg Boat ramp to the entrance markers: 1.2 nm, course 120, offset 0, ratio 0.5
+leg Across the entrance: 0.9 nm, course 200, offset -10, ratio 1.0
+leg Down the coast to the beach: 3.4 nm, course 140, offset +25, ratio 0.45, flood 320
