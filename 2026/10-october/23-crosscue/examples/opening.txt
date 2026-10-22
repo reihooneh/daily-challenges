@@ -1,0 +1,36 @@
+# Spring recital, opening number: eight dancers, a V into two lines, then a circle.
+show Spring recital opening
+stage 10 x 8          # metres: width (stage left to stage right) x depth (front to back)
+tempo 120             # beats per minute; one count is one beat
+pace 1.4              # fastest comfortable walk in metres per second
+space 0.6             # closest two dancers may pass while moving, in metres
+
+formation V
+  Ava  5.0 6.5
+  Ben  4.0 5.5
+  Cleo 6.0 5.5
+  Dev  3.0 4.5
+  Eli  7.0 4.5
+  Fay  2.0 3.5
+  Gus  8.0 3.5
+  Hana 5.0 2.0
+
+formation Two lines in 8 counts
+  spot 2.0 5.0
+  spot 4.0 5.0
+  spot 6.0 5.0
+  spot 8.0 5.0
+  spot 2.0 3.0
+  spot 4.0 3.0
+  spot 6.0 3.0
+  Hana 8.0 3.0        # Hana has the solo exit stage right, so she must end here
+
+formation Circle in 6 counts
+  spot 5.0 6.0
+  spot 6.8 5.3
+  spot 7.5 3.5
+  spot 6.8 1.7
+  spot 5.0 1.0
+  spot 3.2 1.7
+  spot 2.5 3.5
+  spot 3.2 5.3
