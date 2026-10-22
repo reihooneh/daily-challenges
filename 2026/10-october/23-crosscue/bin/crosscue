@@ -1,0 +1,48 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# crosscue SHOW-FILE   plans every change between formations.
+# crosscue -           reads the show from standard input.
+# Exit codes: 0 every change fits, 1 some change needs attention, 2 bad usage or input.
+
+require_relative '../lib/crosscue'
+
+def clean_name(name)
+  File.basename(name.to_s).gsub(/[^\w .,-]/, '?')[0, 60]
+end
+
+def read_show(arg)
+  return $stdin.binmode.read(Crosscue::Parser::MAX_BYTES + 1).to_s if arg == '-'
+
+  stat = File.lstat(arg)
+  raise Crosscue::ShowError, "#{clean_name(arg)} is a symbolic link; give the real file" if stat.symlink?
+  raise Crosscue::ShowError, "#{clean_name(arg)} is not a regular file" unless stat.file?
+  raise Crosscue::ShowError, 'the show file is larger than 64 KB' if stat.size > Crosscue::Parser::MAX_BYTES
+
+  File.open(arg, File::RDONLY | File::NOFOLLOW, binmode: true) { |f| f.read(Crosscue::Parser::MAX_BYTES + 1).to_s }
+rescue Errno::ENOENT
+  raise Crosscue::ShowError, "#{clean_name(arg)} does not exist"
+rescue Errno::ELOOP
+  raise Crosscue::ShowError, "#{clean_name(arg)} is a symbolic link; give the real file"
+rescue SystemCallError
+  raise Crosscue::ShowError, "cannot read #{clean_name(arg)}"
+end
+
+if ARGV.size != 1 || ARGV[0].start_with?('--')
+  warn 'usage: crosscue SHOW-FILE   (or - for standard input)'
+  exit 2
+end
+
+begin
+  bytes = read_show(ARGV[0])
+  raise Crosscue::ShowError, 'the show file is larger than 64 KB' if bytes.bytesize > Crosscue::Parser::MAX_BYTES
+
+  text = bytes.force_encoding(Encoding::UTF_8).delete_prefix("﻿")
+  show = Crosscue::Parser.parse(text)
+  changes = Crosscue::Planner.plan(show)
+  $stdout.write(Crosscue::Report.render(show, changes))
+  exit(changes.all? { |c| c.needed_counts <= c.counts && c.conflicts.empty? } ? 0 : 1)
+rescue Crosscue::ShowError => e
+  warn "crosscue: #{e.message}"
+  exit 2
+end
