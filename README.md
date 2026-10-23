@@ -2,12 +2,13 @@
 
 Small, complete projects, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
 
-**Projects:** 30 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
+**Projects:** 31 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
 
 ## October 2026
 
 | Day | Project | What it does | Language | Field |
 |---|---|---|---|---|
+| 24 | [**Anchorwise**](2026/10-october/24-anchorwise/) | Shows how a climbing anchor really shares its load between the pieces, and how far it drops and how hard it jolts the rest if one piece fails | Lua | Climbing / engineering statics |
 | 23 | [**Crosscue**](2026/10-october/23-crosscue/) | Works out who walks to which spot when dancers change formation: the shortest possible longest walk, then the least walking, then retimes anyone who'd brush past someone | Ruby | Dance choreography / assignment problems |
 | 22 | [**Ferryglide**](2026/10-october/22-ferryglide/) | Finds when a sea kayaker should leave so the tide helps: paddles every departure through a multi-leg route, ferry-gliding across side currents, and shows the windows within your limits | Java | Marine navigation / vector kinematics |
 | 21 | [**Tagback**](2026/10-october/21-tagback/) | Estimates an animal population from mark-recapture sessions with honest 95% intervals, and warns when trap-happy animals are making the count too low | JavaScript | Ecology / statistics |
