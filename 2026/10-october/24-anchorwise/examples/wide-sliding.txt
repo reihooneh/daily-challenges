@@ -1,0 +1,9 @@
+# Two pieces far apart in a horizontal crack, joined with a sliding X (with limiter knots),
+# and the climber's pull coming in a little from the right.
+anchor Wide crack with a sliding X
+load 3 kN at 15
+rigging sliding dyneema
+sling 1.6
+limit 0.15
+piece Left cam -0.6 0
+piece Right nut 0.6 0.05

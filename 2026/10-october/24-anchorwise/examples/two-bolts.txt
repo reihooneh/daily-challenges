@@ -1,0 +1,7 @@
+# Two bolts on a ledge, tied with a nylon cordelette, loaded straight down.
+anchor Two bolts on the belay ledge
+load 2.5 kN
+rigging fixed nylon
+master 0 -0.6
+piece Left bolt -0.25 0
+piece Right bolt 0.25 0

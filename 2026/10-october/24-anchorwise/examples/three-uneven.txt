@@ -1,0 +1,9 @@
+# Three pieces at different heights, pre-equalized with a cordelette. The right arm was tied
+# 2 cm long by mistake, so it starts slack.
+anchor Three pieces, one arm tied long
+load 2 kN
+rigging fixed nylon
+master 0 -0.7
+piece Top nut 0 0.2
+piece Left cam -0.35 0
+piece Right cam 0.4 -0.05 slack 0.02
