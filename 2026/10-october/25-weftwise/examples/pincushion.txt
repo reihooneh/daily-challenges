@@ -1,0 +1,5 @@
+quilt Pincushion
+
+fabric Scrap red
+piece Square 3.5 x 3.5 count 4
+piece Strip 1.5 x 7.5 count 2

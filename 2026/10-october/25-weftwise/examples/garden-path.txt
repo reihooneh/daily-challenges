@@ -1,0 +1,23 @@
+# A 60" x 72" lap quilt: thirty 9" blocks set with sashing, a border and binding.
+quilt Garden Path
+
+fabric Cream background
+width 44
+selvage 0.5
+shrink 3%
+piece Block centre 4.5 x 4.5 count 30
+piece Block corner 2.5 x 2.5 count 120
+piece Sashing 2.5 x 9.5 count 49
+piece Side setting 2.5 x 6.5 count 20
+
+fabric Leafy print
+width 42
+directional                     # the leaves grow upwards
+piece Block side 2.5 x 4.5 count 120
+piece Cornerstone 2.5 x 2.5 count 20
+
+fabric Navy border
+width 42
+piece Border 4.5 x 64.5 count 2 lengthwise
+piece Border top 4.5 x 60.5 count 2 lengthwise
+piece Binding 2.5 x 274 join     # perimeter plus 10" for the corners and the join
