@@ -2,12 +2,13 @@
 
 Small, complete projects, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
 
-**Projects:** 32 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
+**Projects:** 33 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
 
 ## October 2026
 
 | Day | Project | What it does | Language | Field |
 |---|---|---|---|---|
+| 26 | [**Bowball**](2026/10-october/26-bowball/) | Turns seat-racing results into a crew selection: each rower's speed with error bars, their chance of a seat, and the swap to race next that would settle it fastest | Go | Rowing / design of experiments |
 | 25 | [**Weftwise**](2026/10-october/25-weftwise/) | Plans every rotary cut for a quilt, sharing strips between piece sizes, and says exactly how much of each fabric to buy, proving when the plan can't be beaten | C++ | Quilting / cutting-stock optimisation |
 | 24 | [**Anchorwise**](2026/10-october/24-anchorwise/) | Shows how a climbing anchor really shares its load between the pieces, and how far it drops and how hard it jolts the rest if one piece fails | Lua | Climbing / engineering statics |
 | 23 | [**Crosscue**](2026/10-october/23-crosscue/) | Works out who walks to which spot when dancers change formation: the shortest possible longest walk, then the least walking, then retimes anyone who'd brush past someone | Ruby | Dance choreography / assignment problems |
