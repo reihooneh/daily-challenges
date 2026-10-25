@@ -1,0 +1,47 @@
+# Seat racing on the Parramatta, Saturday morning: two coxless fours, 1000 m pieces.
+# After the first piece, each swap is the one Bowball suggested from the results so far.
+squad Women's four selection
+seats 4
+noise 0.6
+
+rower Ava bow
+rower Bea stroke
+rower Cat stroke
+rower Dee bow
+rower Eve bow
+rower Fay stroke
+rower Gia stroke
+rower Hana bow
+
+piece 1000 m                     # first piece
+boat Blue 3:17.9 Ava Bea Dee Fay
+boat Red  3:18.3 Eve Cat Hana Gia
+
+piece 1000 m                     # swap Fay and Gia
+boat Blue 3:16.6 Ava Bea Dee Gia
+boat Red  3:20.0 Eve Cat Hana Fay
+
+piece 1000 m                     # swap Gia and Cat
+boat Blue 3:19.2 Ava Bea Dee Cat
+boat Red  3:21.2 Eve Gia Hana Fay
+
+piece 1000 m                     # swap Bea and Fay
+boat Blue 3:17.5 Ava Fay Dee Cat
+boat Red  3:18.3 Eve Gia Hana Bea
+
+piece 1000 m                     # swap Dee and Hana
+boat Blue 3:22.6 Ava Fay Hana Cat
+boat Red  3:21.5 Eve Gia Dee Bea
+
+piece 1000 m                     # swap Ava and Dee
+boat Blue 3:22.3 Dee Fay Hana Cat
+boat Red  3:17.2 Eve Gia Ava Bea
+
+piece 1000 m                     # swap Dee and Eve
+boat Blue 3:18.4 Eve Fay Hana Cat
+boat Red  3:17.6 Dee Gia Ava Bea
+
+piece 1000 m                     # swap Cat and Bea
+boat Blue 3:20.8 Eve Fay Hana Bea
+boat Red  3:18.4 Dee Gia Ava Cat
+

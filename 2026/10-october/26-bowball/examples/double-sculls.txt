@@ -1,0 +1,30 @@
+# Three double sculls, 2000 m pieces into a light headwind. Scullers have no side.
+squad Men's double trial
+seats 2
+
+rower Kai
+rower Leo
+rower Max
+rower Nico
+rower Omar
+rower Pete
+
+piece 2000 m
+boat One   6:53.1 Kai Leo
+boat Two   6:57.3 Max Nico
+boat Three 6:55.4 Omar Pete
+
+piece 2000 m
+boat One   6:55.7 Max Leo
+boat Two   7:00.3 Kai Nico
+boat Three 7:01.0 Omar Pete
+
+piece 2000 m
+boat One   7:02.6 Max Omar
+boat Two   7:04.7 Kai Pete
+boat Three 7:03.8 Leo Nico
+
+piece 2000 m
+boat One   6:56.3 Kai Omar
+boat Two   6:58.1 Leo Pete
+boat Three 6:56.6 Max Nico
