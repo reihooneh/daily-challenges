@@ -1,0 +1,29 @@
+# Boreholes on a made-up farm: where each hole met the top of the coal seam.
+# Coordinates are a local grid in metres (east, north); elevations above sea level.
+survey Ridge Farm boreholes
+horizon top of the Ridge coal seam
+units m
+
+point BH01 4851.7 7767.8 -9.14
+point BH02 4869.2 8067.7 16.30
+point BH03 5125.8 7842.0 32.23
+point BH04 4868.0 7818.8 -0.79
+point BH05 4775.0 7865.9 -14.99
+point BH06 5033.1 8540.1 84.96
+point BH07 4866.5 8463.6 43.60
+point BH08 5346.0 7893.6 81.11
+point BH09 4959.3 8261.5 48.75
+point BH10 5443.9 8219.7 124.53
+point BH11 4984.1 8118.3 43.75
+point BH12 4861.4 8025.5 11.61
+point BH13 4900.8 7981.3 17.94
+point BH14 5475.8 7986.3 114.10
+point BH15 5089.8 7881.8 48.69
+point BH16 5346.2 7807.5 74.46
+point BH17 4905.1 8340.6 44.04
+point BH18 5128.9 7677.9 23.26
+
+section 070           # the planned haul road runs this way
+section 160
+predict NewHole-A 5000 8300 ground 120.5
+predict NewHole-B 5500 7900 ground 98.0

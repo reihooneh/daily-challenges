@@ -1,0 +1,9 @@
+#!/usr/bin/perl -T
+# downthrow: dip, strike and hidden faults from where a rock horizon was met in boreholes.
+use strict;
+use warnings FATAL => 'all';
+use FindBin ();
+use lib do { my ($dir) = $FindBin::RealBin =~ m{\A([\w./ -]+)\z} or die "unsafe install path\n"; "$dir/../lib" };
+use Downthrow::App qw(run);
+
+exit run(\@ARGV, \*STDIN, \*STDOUT, \*STDERR);
