@@ -1,0 +1,19 @@
+{
+  "name": "gapkeeper",
+  "version": "1.0.0",
+  "description": "Measures bus bunching from a route's arrival log and replays the day with a headway-holding rule to find the setting that cuts waiting most.",
+  "private": true,
+  "type": "module",
+  "bin": { "gapkeeper": "dist/src/cli.js" },
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc && node --test dist/tests/*.test.js",
+    "start": "node dist/src/cli.js"
+  },
+  "engines": { "node": ">=20" },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "22.10.2",
+    "typescript": "5.7.2"
+  }
+}
