@@ -1,0 +1,12 @@
+# The same fish, but the filter has a sponge from an established tank squeezed into it.
+tank River community 90 L (seeded)
+volume 90 L
+temperature 26 C
+ph 7.4
+filter seeded 0.3
+water-change 25% every 7 days
+
+fish Neon tetra x 12 length 3
+fish Cherry barb x 6 length 5
+fish Corydoras x 6 length 6
+fish Bristlenose pleco x 1 length 12

@@ -1,0 +1,12 @@
+# A new 90 litre community tank, filter straight out of the box.
+tank River community 90 L
+volume 90 L
+temperature 26 C
+ph 7.4
+filter new
+water-change 25% every 7 days
+
+fish Neon tetra x 12 length 3
+fish Cherry barb x 6 length 5
+fish Corydoras x 6 length 6
+fish Bristlenose pleco x 1 length 12

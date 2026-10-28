@@ -1,0 +1,10 @@
+# Big messy fish in a new tank: needs a fishless cycle first.
+tank Goldfish tub
+volume 200 L
+temperature 20 C
+ph 7.8
+filter new
+water-change 30% every 7 days
+
+fish Fancy goldfish x 3 length 15
+fish Fancy goldfish x 2 length 15
