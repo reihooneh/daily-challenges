@@ -2,12 +2,13 @@
 
 Small, complete projects, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
 
-**Projects:** 35 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
+**Projects:** 36 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
 
 ## October 2026
 
 | Day | Project | What it does | Language | Field |
 |---|---|---|---|---|
+| 29 | [**Ammonite**](2026/10-october/29-ammonite/) | Plans when to add fish to a new aquarium: simulates the filter bacteria growing and schedules each group for the earliest day ammonia and nitrite stay safe, or a fishless cycle first | PHP | Fishkeeping / microbial kinetics |
 | 28 | [**Downthrow**](2026/10-october/28-downthrow/) | Fits the dip and strike of a buried rock layer from boreholes and hunts for a hidden fault, with a significance test that accounts for searching every possible fault line | Perl | Structural geology |
 | 27 | [**Gapkeeper**](2026/10-october/27-gapkeeper/) | Measures bus bunching from a route's arrival log (excess waiting stop by stop) and replays the day under holding rules to find the one that cuts waiting most | TypeScript | Public transport operations |
 | 26 | [**Bowball**](2026/10-october/26-bowball/) | Turns seat-racing results into a crew selection: each rower's speed with error bars, their chance of a seat, and the swap to race next that would settle it fastest | Go | Rowing / design of experiments |
