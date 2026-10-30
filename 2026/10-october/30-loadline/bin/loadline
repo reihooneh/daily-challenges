@@ -1,0 +1,111 @@
+#!/usr/bin/env bash
+# Loadline: sorts a laundry basket into the fewest machine loads that respect every care label:
+# temperature, colour, fabric (and how much a gentle programme can take), and new clothes that bleed.
+# Usage: loadline BASKET.txt     (or - for standard input)
+set -euo pipefail
+export LC_ALL=C
+
+HERE=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
+readonly PLAN_AWK="$HERE/../lib/plan.awk"
+readonly MAX_BYTES=32768 MAX_ITEMS=60 MAX_PIECES=200 MAX_LINE=200
+
+usage() {
+  cat <<'TXT'
+Usage: loadline BASKET.txt        (or - to read standard input)
+
+  name Saturday wash
+  machine 7 kg                       the drum's rated load for cotton
+  item Towels x 6 0.5 kg cotton white 60 hot
+  item Red tee x 1 0.2 kg cotton red 40 bleeds
+
+  item <name> x <count> <kg each> kg <cotton|synthetic|delicate|wool> <white|light|bright|dark|red> <20|30|40|60|90> [hot] [bleeds]
+    the number is the care label's highest temperature; "hot" means it should get 60 °C if it can
+    (towels, bedding, cloths); "bleeds" marks new coloured clothes that may run.
+
+Exit codes: 0 plan printed, 2 bad usage or input.
+TXT
+}
+
+die() { printf 'loadline: %s\n' "$1" >&2; exit 2; }
+
+# Turns the basket text into tab-separated records for the planner. Every line is checked
+# against a fixed pattern; names are limited to a safe character set; nothing is ever evaluated.
+parse() {
+  local text=$1 line n=0 items=0 pieces=0 machine='' title='My wash'
+  local re_item='^item[[:space:]]+(.+)[[:space:]]+x[[:space:]]*([0-9]{1,3})[[:space:]]+([0-9]{1,2}(\.[0-9]{1,3})?)[[:space:]]+kg[[:space:]]+(cotton|synthetic|delicate|wool)[[:space:]]+(white|light|bright|dark|red)[[:space:]]+(20|30|40|60|90)(([[:space:]]+(hot|bleeds))*)$'
+  local re_name="^[A-Za-z0-9][A-Za-z0-9 '().,&/-]{0,39}$"
+  local records=''
+  while IFS= read -r line || [[ -n $line ]]; do
+    n=$((n + 1))
+    ((${#line} <= MAX_LINE)) || die "line $n: is longer than $MAX_LINE characters"
+    line=${line%$'\r'}
+    # Terminal escapes and other control characters (a tab is fine).
+    [[ $line != *[$'\x01'-$'\x08'$'\x0b'-$'\x1f'$'\x7f']* ]] || die "line $n: contains a control character"
+    line=${line%%#*}
+    line=${line//$'\t'/ }
+    # Trim.
+    line="${line#"${line%%[![:space:]]*}"}"
+    line="${line%"${line##*[![:space:]]}"}"
+    [[ -n $line ]] || continue
+    case $line in
+      name\ *)
+        title=${line#name }
+        title="${title#"${title%%[![:space:]]*}"}"
+        [[ $title =~ $re_name ]] || die "line $n: names use letters, digits, spaces and ' ( ) . , & / - (up to 40)"
+        ;;
+      machine\ *)
+        [[ -z $machine ]] || die "line $n: 'machine' comes once"
+        [[ $line =~ ^machine[[:space:]]+([0-9]{1,2}(\.[0-9])?)[[:space:]]+kg$ ]] || die "line $n: write the drum size like 'machine 7 kg'"
+        machine=${BASH_REMATCH[1]}
+        awk -v m="$machine" 'BEGIN { exit !(m >= 3 && m <= 20) }' || die "line $n: the machine takes 3 to 20 kg"
+        ;;
+      item\ *)
+        [[ $line =~ $re_item ]] || die "line $n: write items like 'item Towels x 6 0.5 kg cotton white 60' (see --help)"
+        local name=${BASH_REMATCH[1]} count=$((10#${BASH_REMATCH[2]})) kg=${BASH_REMATCH[3]}
+        local fabric=${BASH_REMATCH[5]} colour=${BASH_REMATCH[6]} temp=${BASH_REMATCH[7]} flags=${BASH_REMATCH[8]}
+        name="${name%"${name##*[![:space:]]}"}"
+        [[ $name =~ $re_name ]] || die "line $n: names use letters, digits, spaces and ' ( ) . , & / - (up to 40)"
+        ((count >= 1)) || die "line $n: the count must be at least 1"
+        awk -v w="$kg" 'BEGIN { exit !(w >= 0.05 && w <= 10) }' || die "line $n: each piece weighs 0.05 to 10 kg"
+        local hot=0 bleeds=0
+        [[ $flags == *hot* ]] && hot=1
+        [[ $flags == *bleeds* ]] && bleeds=1
+        if ((hot)) && ((temp < 60)); then die "line $n: 'hot' needs a care label of 60 or 90"; fi
+        items=$((items + 1))
+        pieces=$((pieces + count))
+        ((items <= MAX_ITEMS)) || die "at most $MAX_ITEMS items"
+        ((pieces <= MAX_PIECES)) || die "at most $MAX_PIECES pieces in one basket"
+        records+="I	$items	$name	$count	$kg	$fabric	$colour	$temp	$hot	$bleeds"$'\n'
+        ;;
+      *) die "line $n: lines start with name, machine or item" ;;
+    esac
+  done <<<"$text"
+  [[ -n $machine ]] || die "the basket needs a 'machine' line"
+  ((items > 0)) || die "the basket has no items"
+  printf 'M\t%s\t%s\n%s' "$machine" "$title" "$records"
+}
+
+main() {
+  if (($# != 1)) || [[ $1 == -h || $1 == --help ]]; then
+    usage >&2
+    exit 2
+  fi
+  local path=$1 text
+  if [[ $path == - ]]; then
+    text=$(head -c $((MAX_BYTES + 1)); echo x)
+  else
+    # Only regular files, and never more than the limit; the path itself is never echoed.
+    [[ $path != *$'\n'* && -f $path && -r $path ]] || die "the basket could not be read (it must be a readable file)"
+    text=$(head -c $((MAX_BYTES + 1)) -- "$path"; echo x)
+  fi
+  text=${text%x}
+  ((${#text} <= MAX_BYTES)) || die "the basket is larger than 32 KB"
+  # Strict ASCII keeps names printable and the patterns simple; a byte-order mark is skipped.
+  text=${text#$'\xef\xbb\xbf'}
+  [[ $text != *[$'\x80'-$'\xff']* ]] || die "the basket must be plain ASCII text"
+  local records
+  records=$(parse "$text")
+  printf '%s\n' "$records" | awk -f "$PLAN_AWK"
+}
+
+main "$@"
