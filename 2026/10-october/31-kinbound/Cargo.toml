@@ -1,0 +1,14 @@
+[package]
+name = "kinbound"
+version = "1.0.0"
+edition = "2021"
+description = "Works out the earliest and latest possible birth and death years for everyone in a family tree, and explains exactly which records can't all be true"
+license = "MIT"
+
+[dependencies]
+
+[profile.release]
+overflow-checks = true
+
+[lints.rust]
+unsafe_code = "forbid"
