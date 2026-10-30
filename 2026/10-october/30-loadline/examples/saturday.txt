@@ -1,0 +1,15 @@
+# A household's Saturday wash, 7 kg front loader.
+name Saturday wash
+machine 7 kg
+
+item Bath towels       x 4 0.6 kg  cotton    white 60 hot
+item Tea towels        x 6 0.1 kg  cotton    white 60 hot
+item Bed sheets        x 2 0.7 kg  cotton    light 60 hot
+item Work shirts       x 5 0.25 kg cotton    white 40
+item School uniform    x 4 0.3 kg  synthetic light 40
+item Jeans             x 3 0.7 kg  cotton    dark  40
+item Gym gear          x 5 0.2 kg  synthetic bright 40
+item Black jumpers     x 2 0.5 kg  synthetic dark  30
+item New red hoodie    x 1 0.6 kg  cotton    red   30 bleeds
+item Merino base layer x 2 0.25 kg wool      dark  30
+item Silk blouse       x 1 0.15 kg delicate  light 30
