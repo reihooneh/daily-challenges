@@ -1,0 +1,41 @@
+# An invented family, put together the way a family historian would from parish and census records.
+name The Ashworth family
+
+person thomas Thomas Ashworth
+person mary Mary Ashworth                 # born Mary Pell
+person john John Ashworth
+person ellen Ellen Ashworth
+person william William Ashworth
+person george George Ashworth
+person sarah Sarah Ashworth
+person hannah Hannah Pell
+
+baptised thomas 1812
+married thomas mary 1835
+census mary 1841 age 25
+census mary 1851 age 36
+buried thomas 1858
+died mary about 1879
+mother hannah of mary          # no records of her own yet
+
+mother mary of john
+father thomas of john
+born john 1836
+census john 1881 age 44
+
+mother mary of ellen
+father thomas of ellen
+census ellen 1851 age 11
+
+mother mary of william
+father thomas of william
+baptised william 1844
+
+mother mary of george
+father thomas of george
+born george about 1850
+alive george 1901
+
+mother mary of sarah
+father thomas of sarah
+born sarah 1861            # from a family Bible; the parish register has no baptism
