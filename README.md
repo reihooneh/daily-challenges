@@ -2,12 +2,13 @@
 
 Small, complete projects, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
 
-**Projects:** 37 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
+**Projects:** 38 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
 
 ## October 2026
 
 | Day | Project | What it does | Language | Field |
 |---|---|---|---|---|
+| 31 | [**Kinbound**](2026/10-october/31-kinbound/) | Works out the earliest and latest possible birth and death years for everyone in a family tree, and when records contradict each other, shows which can't all be true and the fewest that must be wrong | Rust | Genealogy / difference constraints |
 | 30 | [**Loadline**](2026/10-october/30-loadline/) | Sorts a laundry basket into the fewest machine loads that respect every care label (temperature, colour, fabric programme capacity, items that bleed), and proves the minimum for small baskets | Bash | Household care / bin packing with conflicts |
 | 29 | [**Ammonite**](2026/10-october/29-ammonite/) | Plans when to add fish to a new aquarium: simulates the filter bacteria growing and schedules each group for the earliest day ammonia and nitrite stay safe, or a fishless cycle first | PHP | Fishkeeping / microbial kinetics |
 | 28 | [**Downthrow**](2026/10-october/28-downthrow/) | Fits the dip and strike of a buried rock layer from boreholes and hunts for a hidden fault, with a significance test that accounts for searching every possible fault line | Perl | Structural geology |
