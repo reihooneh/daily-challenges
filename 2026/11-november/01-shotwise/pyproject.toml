@@ -1,0 +1,27 @@
+[project]
+name = "shotwise"
+version = "1.0.0"
+description = "Puts a wedding's family photo list in the order that keeps everyone waiting least, respecting who arrives late and who must leave early"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = []
+
+[project.scripts]
+shotwise = "shotwise.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 130
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "B", "UP", "S", "SIM", "RUF", "N", "I"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101", "S311", "S603"]
