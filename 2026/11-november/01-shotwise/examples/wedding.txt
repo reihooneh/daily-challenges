@@ -1,0 +1,26 @@
+# An invented wedding. The shots are in the order the couple first wrote them.
+title Priya and Tom
+minutes 2
+
+shot Couple alone: Priya, Tom
+shot Priya's parents: Priya, Tom, Anita, Raj
+shot Priya's family: Priya, Tom, Anita, Raj, Kiran, Meera, Arjun, Nani
+shot Priya with Nani: Priya, Nani
+shot Tom's parents: Priya, Tom, Helen, Graham
+shot Tom's family: Priya, Tom, Helen, Graham, Lucy, Sam, Grandpa Bill
+shot Tom with Grandpa Bill: Tom, Grandpa Bill
+shot Both families (3): Priya, Tom, Anita, Raj, Kiran, Meera, Arjun, Nani, Helen, Graham, Lucy, Sam, Grandpa Bill
+shot Bridal party: Priya, Tom, Zara, Chloe, Ben, Ollie
+shot Bridesmaids: Priya, Zara, Chloe
+shot Groomsmen: Tom, Ben, Ollie
+shot Priya and Kiran: Priya, Kiran
+shot Cousins: Priya, Tom, Kiran, Arjun, Lucy
+shot Everyone (4): Priya, Tom, Anita, Raj, Kiran, Meera, Arjun, Helen, Graham, Lucy, Sam, Grandpa Bill, Zara, Chloe, Ben, Ollie
+
+first Couple alone
+last Everyone
+leaves Nani at 16        # her lift leaves for the reception
+arrives Ben at 6         # parking the car
+weight Nani 3            # standing about is hardest for the grandparents
+weight Grandpa Bill 3
+weight Arjun 2           # six years old
