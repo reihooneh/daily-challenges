@@ -2,7 +2,13 @@
 
 Small, complete projects, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
 
-**Projects:** 38 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
+**Projects:** 39 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
+
+## November 2026
+
+| Day | Project | What it does | Language | Field |
+|---|---|---|---|---|
+| 01 | [**Shotwise**](2026/11-november/01-shotwise/) | Puts a wedding's family photo list in the order that keeps everyone waiting least, respecting who arrives late and who must leave early, and prints a call sheet of who to call in and who is free to go | Python | Event photography / talent scheduling |
 
 ## October 2026
 
