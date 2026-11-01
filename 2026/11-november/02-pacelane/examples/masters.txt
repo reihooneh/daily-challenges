@@ -1,0 +1,33 @@
+# An invented masters squad on a Tuesday night.
+title Tuesday masters
+pool 25
+set 10 x 100
+lanes 5
+max 7
+rest 15            # seconds of rest the coach wants on each 100
+min-rest 5         # nobody gets less than this
+gap 5              # seconds between swimmers pushing off
+clock 5            # send-offs are on the 5s of the pace clock
+
+swimmer Alex Moreau     1:12
+swimmer Bea Okonkwo     1:16
+swimmer Chen Wei        1:18
+swimmer Dana Kowalski   1:21
+swimmer Eli Haddad      1:22
+swimmer Farah Siddiqui  1:24
+swimmer Gus Lindqvist   1:27
+swimmer Hana Sato       1:28
+swimmer Ivo Petrov      1:29
+swimmer Jade Murphy     1:31
+swimmer Kofi Mensah     1:33
+swimmer Lena Fischer    1:35
+swimmer Mateo Ruiz      1:38
+swimmer Nia Thompson    1:39
+swimmer Omar Aziz       1:44
+swimmer Priya Nair      1:46
+swimmer Quinn Byrne     1:52
+swimmer Rosa Delgado    1:55
+swimmer Sam Whitaker    2:02
+swimmer Tui Ngata       2:05
+swimmer Uma Rao         2:18
+swimmer Vic Bianchi     2:25
