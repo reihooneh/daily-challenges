@@ -1,0 +1,4 @@
+pacelane
+tests/test_pacelane
+tests/pacelane_san
+*.o
