@@ -2,12 +2,13 @@
 
 Small, complete projects, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
 
-**Projects:** 40 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
+**Projects:** 41 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
 
 ## November 2026
 
 | Day | Project | What it does | Language | Field |
 |---|---|---|---|---|
+| 03 | [**Lockpace**](2026/11-november/03-lockpace/) | Plays an escape-room design for every team size: finish times, idle players, hint deadlines and dead ends, before the room is built | JavaScript | Escape-room design / project scheduling |
 | 02 | [**Pacelane**](2026/11-november/02-pacelane/) | Splits a swim squad into lanes and sets each lane's send-off interval so everyone gets as close as possible to the target rest, with an exact dynamic programme | C | Swim coaching / optimal partitioning |
 | 01 | [**Shotwise**](2026/11-november/01-shotwise/) | Puts a wedding's family photo list in the order that keeps everyone waiting least, respecting who arrives late and who must leave early, and prints a call sheet of who to call in and who is free to go | Python | Event photography / talent scheduling |
 
