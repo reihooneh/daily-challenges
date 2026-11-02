@@ -1,0 +1,21 @@
+# An invented room, as a designer might sketch it before the build.
+room The Clockmaker's Study
+limit 60
+players 2-6
+show 4
+goal freedom
+
+puzzle Bookshelf cipher (9 min) gives drawer code
+puzzle Desk drawer (3 min) needs drawer code gives brass key, small key
+puzzle Portrait eyes (7 min) gives star chart
+puzzle Telescope (8 min, 2 people) needs star chart gives lens
+puzzle Map drawer (6 min) gives map piece
+puzzle Globe (7 min) needs map piece gives compass
+puzzle Clock face (10 min) needs brass key gives gear
+puzzle Music box (6 min) needs small key gives melody
+puzzle Pipe organ (7 min) needs melody gives organ note
+puzzle Pendulum cabinet (9 min) needs gear, lens, compass gives pendulum
+puzzle Floor tiles (8 min) gives tile number, old coin
+puzzle Wall safe (5 min) needs tile number, organ note gives safe key
+puzzle Grandfather clock (5 min, 3 people) needs pendulum uses safe key gives exit key
+puzzle Exit door (1 min) uses exit key gives freedom
