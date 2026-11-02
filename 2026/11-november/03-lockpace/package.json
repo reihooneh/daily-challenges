@@ -1,0 +1,21 @@
+{
+  "name": "lockpace",
+  "version": "1.0.0",
+  "description": "Plays an escape room design for every team size: finish times, idle players, hint deadlines and dead ends",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "lockpace": "bin/lockpace.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "check": "tsc --noEmit --allowJs --checkJs --strict --target es2022 --module nodenext --moduleResolution nodenext --types node src/*.js bin/*.js"
+  },
+  "devDependencies": {
+    "@types/node": "22.15.3",
+    "typescript": "5.8.3"
+  }
+}
