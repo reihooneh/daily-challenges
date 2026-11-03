@@ -1,0 +1,31 @@
+# An invented OO-gauge layout: an oval main line, a goods siding, and a balloon loop
+# at the end of a branch so trains can turn round and come back.
+layout Riverside Junction
+train 1.6 m                     # the longest train, loco to brake van
+
+track m1 1.8 m
+track m2 1.8 m
+track m3 1.8 m
+track m4 1.8 m
+turnout t1 22 cm                # branch off the main line
+turnout t3 22 cm                # goods yard
+track yard 90 cm
+track branch 1.4 m
+turnout t2 22 cm                # where the balloon loop starts
+track loop1 1.2 m
+track loop2 1.2 m
+track loop3 1.0 m
+
+join m1.b m2.a
+join m2.b t3.p
+join t3.s m3.a
+join t3.d yard.a
+join m3.b m4.a
+join m4.b t1.p
+join t1.s m1.a
+join t1.d branch.a
+join branch.b t2.p
+join t2.s loop1.a
+join loop1.b loop2.a
+join loop2.b loop3.a
+join loop3.b t2.d               # the loop closes back on itself
