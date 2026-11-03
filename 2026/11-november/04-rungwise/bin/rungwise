@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# rungwise POLICY-FILE   when to claim and when to pay a repair yourself.
+# rungwise -             reads the policy from standard input.
+# Exit codes: 0 advice printed, 2 bad usage or input.
+
+require_relative '../lib/rungwise'
+
+def read_policy(arg)
+  return $stdin.binmode.read(Rungwise::Parser::MAX_BYTES + 1).to_s if arg == '-'
+
+  stat = File.lstat(arg)
+  raise Rungwise::PolicyError, 'the policy file is a symbolic link; give the real file' if stat.symlink?
+  raise Rungwise::PolicyError, 'the policy file is not a regular file' unless stat.file?
+  raise Rungwise::PolicyError, 'the policy file is larger than 32 KB' if stat.size > Rungwise::Parser::MAX_BYTES
+
+  File.open(arg, File::RDONLY | File::NOFOLLOW, binmode: true) { |f| f.read(Rungwise::Parser::MAX_BYTES + 1).to_s }
+rescue Errno::ENOENT
+  raise Rungwise::PolicyError, 'the policy file does not exist'
+rescue Errno::ELOOP
+  raise Rungwise::PolicyError, 'the policy file is a symbolic link; give the real file'
+rescue SystemCallError
+  raise Rungwise::PolicyError, 'the policy file could not be read'
+end
+
+if ARGV.size != 1 || ARGV[0].start_with?('--')
+  warn 'usage: rungwise POLICY-FILE   (or - for standard input)'
+  exit 2
+end
+
+begin
+  bytes = read_policy(ARGV[0])
+  raise Rungwise::PolicyError, 'the policy file is larger than 32 KB' if bytes.bytesize > Rungwise::Parser::MAX_BYTES
+
+  policy = Rungwise::Parser.parse(bytes.force_encoding(Encoding::UTF_8))
+  $stdout.write(Rungwise::Report.render(policy))
+  exit 0
+rescue Rungwise::PolicyError => e
+  warn "rungwise: #{e.message}"
+  exit 2
+end

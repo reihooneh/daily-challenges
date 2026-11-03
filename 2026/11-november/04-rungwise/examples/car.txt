@@ -1,0 +1,19 @@
+# An invented comprehensive car policy with a six-rung rating ladder (worst first, best last).
+# A claim drops you two rungs; a claim-free year moves you up one.
+policy Family hatchback
+premium 1450              # before any discount, $ a year
+excess 700
+accident-chance 9%        # your own estimate of an at-fault prang in a year
+repair-median 2800        # a typical repair bill
+repair-spread 0.9         # how much bills vary (0.9 is wide: dents to write-offs)
+years 5
+interest 4%
+protection 95             # optional: the yearly price of protecting the bonus
+start Rating 4
+
+level Rating 6 discount 0% claim-to Rating 6
+level Rating 5 discount 15% claim-to Rating 6
+level Rating 4 discount 30% claim-to Rating 6
+level Rating 3 discount 45% claim-to Rating 5
+level Rating 2 discount 55% claim-to Rating 4
+level Rating 1 discount 65% claim-to Rating 3
