@@ -1,0 +1,10 @@
+# A tempting variation that doesn't work: only two piles, and the picked pile on top.
+trick Two piles, picked on top
+deck 20
+choose card X
+repeat 3
+  piles 2
+  pick X
+  gather top
+end
+expect X on top

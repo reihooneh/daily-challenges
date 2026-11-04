@@ -1,0 +1,11 @@
+# The classic 21-card trick: deal three piles, the spectator points to the pile with their card,
+# gather it in the middle, three times. The card is then the 11th.
+trick The twenty-one card trick
+deck 21
+choose card X            # the spectator thinks of any card
+repeat 3
+  piles 3                # deal into three piles, face down
+  pick X                 # "which pile is your card in?"
+  gather middle          # that pile goes between the other two
+end
+expect X at 11

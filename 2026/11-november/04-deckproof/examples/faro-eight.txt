@@ -1,0 +1,7 @@
+# Eight perfect out-shuffles bring a 52-card deck back to its starting order.
+trick Eight perfect shuffles
+deck 52
+repeat 8
+  faro out
+end
+expect original
