@@ -1,0 +1,22 @@
+# A cherry hall table with breadboard ends and a walnut panel in the back.
+# Axes: x runs left to right, y front to back, z up. Lengths are in millimetres.
+design Hall table
+climate 30 to 65          # indoor relative humidity over a year, %
+built-at 45               # humidity in the shop when it was made
+temperature 20
+
+part top          cherry   flat     grain x  width y
+part end-left     cherry   flat     grain y  width x     # breadboard ends across the top
+part end-right    cherry   flat     grain y  width x
+part apron-front  cherry   flat     grain x  width z
+part apron-side   cherry   flat     grain y  width z
+part leg          cherry   quarter  grain z  width x
+part back-rail    cherry   flat     grain x  width z
+part back-panel   walnut   flat     grain z  width x
+
+joint top end-left         glue         along y 450              # glued all along: the classic mistake
+joint top end-right        pegs         along y 450
+joint top apron-front      glue         along x 1100             # long grain to long grain
+joint top apron-side       buttons 2    along y 400
+joint apron-front leg      glue         along z 90               # a wide tenon
+joint back-panel back-rail floating 6 depth 10 along x 400
