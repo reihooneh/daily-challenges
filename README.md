@@ -2,12 +2,13 @@
 
 Small, complete projects, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
 
-**Projects:** 45 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
+**Projects:** 46 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
 
 ## November 2026
 
 | Day | Project | What it does | Language | Field |
 |---|---|---|---|---|
+| 05 | [**Swellmark**](2026/11-november/05-swellmark/) | Finds the joints in a furniture design that seasonal wood movement will crack, bind or push apart, says what to change, and gives the shop humidity at which it's safe to build | Go | Woodworking / wood science |
 | 05 | [**Bellshare**](2026/11-november/05-bellshare/) | Shares out a handbell piece's bells among the ringers so nobody needs three hands, with the fewest and least rushed bell changes, and lists each change to mark in the music | C++ | Handbell ringing / caching and dynamic programming |
 | 04 | [**Deckproof**](2026/11-november/04-deckproof/) | Proves a self-working card trick works for every choice the spectator could make, or shows the exact case where it fails and where the card lands instead | Lua | Card magic / permutations |
 | 04 | [**Rungwise**](2026/11-november/04-rungwise/) | Works out, for every rung of an insurer's no-claim-bonus ladder and every year left, the repair bill above which claiming is cheaper than paying yourself, and whether bonus protection is worth it | Ruby | Insurance / Markov decision processes |
