@@ -1,0 +1,20 @@
+{
+  "name": "grozer",
+  "version": "1.0.0",
+  "description": "Checks a stained-glass design for pieces that can't be cut, and finds the fewest extra lead lines that make every piece cuttable.",
+  "private": true,
+  "type": "module",
+  "bin": { "grozer": "dist/src/cli.js" },
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc && node --test dist/tests/*.test.js",
+    "lint": "tsc --noEmit",
+    "start": "node dist/src/cli.js"
+  },
+  "engines": { "node": ">=20" },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "22.10.2",
+    "typescript": "5.7.2"
+  }
+}
