@@ -1,0 +1,45 @@
+# A sampler of glass pieces, each with a different cutting problem. Coordinates in mm.
+window Cutting sampler
+min-width 10
+min-angle 30
+sharp-corner 15
+max-curve 0.3
+
+# A plain square: cuts with four scores.
+piece square amber
+  20,20 100,20 100,100 20,100
+
+# An L: its inside corner can't be cut.
+piece ell red
+  130,20 250,20 250,60 180,60 180,130 130,130
+
+# A crescent moon: its inside curve is too deep to nibble out.
+piece moon gold
+  367.5,122.6 354.2,128.1 340,130 325.8,128.1 312.5,122.6 301.1,113.9 292.4,102.5 286.9,89.2
+  285,75 286.9,60.8 292.4,47.5 301.1,36.1 312.5,27.4 325.8,21.9 340,20 354.2,21.9
+  367.5,27.4 347,41 340.6,45.9 335.2,52.1 331.3,59.2 328.8,66.9 328,75 328.8,83.1
+  331.3,90.8 335.2,97.9 340.6,104.1 347,109
+
+# A leaf: cuttable, but its points are sharp.
+piece leaf green
+  20,190 31.5,192.4 43.1,194.4 54.8,196 66.5,197.1 78.2,197.8 90,198 101.8,197.8
+  113.5,197.1 125.2,196 136.9,194.4 148.5,192.4 160,190 148.5,187.6 136.9,185.6 125.2,184
+  113.5,182.9 101.8,182.2 90,182 78.2,182.2 66.5,182.9 54.8,184 43.1,185.6 31.5,187.6
+
+# A five-pointed star: five inside corners.
+piece star cobalt
+  250,260 234.7,221 192.9,218.5 225.3,192 214.7,151.5 250,174 285.3,151.5 274.7,192
+  307.1,218.5 265.3,221
+
+# A thin strip: cuts, but may break.
+piece sliver clear
+  320,150 420,150 420,156 320,156
+
+# A shallow inside curve: nibble it out with relief scores.
+piece scallop pink
+  320,175 420,175 420,250 410,245.7 400,241.8 390,238.7 380,236.7 370,236
+  360,236.7 350,238.7 340,241.8 330,245.7 320,250
+
+# A T: two inside corners.
+piece tee purple
+  20,400 140,400 140,370 95,370 95,280 65,280 65,370 20,370
