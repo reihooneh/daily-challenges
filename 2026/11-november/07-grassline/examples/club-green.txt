@@ -1,0 +1,10 @@
+# A Saturday roll-up on the club's B green, with my own bowls (forehand).
+# draw LENGTH WIDTH: the jack length in metres, and how far right of the jack I had to aim
+# timed DISTANCE SECONDS: a bowl that stopped at that distance, timed from delivery to rest
+draw 23.5 1.95
+draw 25.0 2.05
+draw 27.5 2.30
+draw 30.0 2.45
+draw 32.0 2.70
+timed 27.4 14.6
+timed 26.8 14.3
