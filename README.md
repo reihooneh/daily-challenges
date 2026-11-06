@@ -2,12 +2,13 @@
 
 Small, complete projects, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
 
-**Projects:** 47 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
+**Projects:** 48 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
 
 ## November 2026
 
 | Day | Project | What it does | Language | Field |
 |---|---|---|---|---|
+| 06 | [**Tubewise**](2026/11-november/06-tubewise/) | Plans the glass for a neon sign: one continuous tube through every letter with the least blacked-out glass (route inspection with exact matching), cut into tubes with the joints hidden, plus an SVG drawing | Perl | Neon sign making / graph theory |
 | 06 | [**Grozer**](2026/11-november/06-grozer/) | Finds the pieces of a stained-glass design that can't be cut (inside corners, deep curves) and searches for the fewest lead lines that make every piece cuttable, with an SVG drawing | TypeScript | Stained glass / computational geometry |
 | 05 | [**Swellmark**](2026/11-november/05-swellmark/) | Finds the joints in a furniture design that seasonal wood movement will crack, bind or push apart, says what to change, and gives the shop humidity at which it's safe to build | Go | Woodworking / wood science |
 | 05 | [**Bellshare**](2026/11-november/05-bellshare/) | Shares out a handbell piece's bells among the ringers so nobody needs three hands, with the fewest and least rushed bell changes, and lists each change to mark in the music | C++ | Handbell ringing / caching and dynamic programming |
