@@ -1,0 +1,9 @@
+#!/usr/bin/perl -T
+# tubewise: plans the glass for a neon sign, with the least blacked-out tube.
+use strict;
+use warnings FATAL => 'all';
+use FindBin ();
+use lib do { my ($dir) = $FindBin::RealBin =~ m{\A([\w./ -]+)\z} or die "unsafe install path\n"; "$dir/../lib" };
+use Tubewise::App qw(run);
+
+exit run(\@ARGV, \*STDIN, \*STDOUT, \*STDERR);

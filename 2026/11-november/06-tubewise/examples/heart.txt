@@ -1,0 +1,9 @@
+# A heart outline with an arrow through it, for a neon sign of your own shape.
+# Coordinates are millimetres with y up. Strokes may cross: they are split where they meet.
+name Heart
+stroke 200,40 330,170 345,215 340,250 320,280 290,295 255,295 225,280 200,250 175,280 145,295 110,295 80,280 60,250 55,215 70,170 200,40
+stroke 20,90 380,250
+stroke 380,250 352,256
+stroke 380,250 366,225
+stroke 20,90 30,112
+stroke 20,90 44,86
