@@ -1,0 +1,3 @@
+*.svg
+!examples/*.svg
+*.tmp
