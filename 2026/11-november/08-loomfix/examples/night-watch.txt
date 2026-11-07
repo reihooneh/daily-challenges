@@ -1,0 +1,11 @@
+# Timed from the cockpit with a phone stopwatch, tapping each time the light came on.
+timing stopwatch
+colour W
+watched 0 to 33     # started and stopped looking
+2.4
+3.9
+12.5
+13.9
+22.3
+23.8
+32.4

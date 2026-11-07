@@ -1,0 +1,14 @@
+# Lights around Kestrel Bay: an invented harbour for trying Loomfix.
+# NOT REAL NAVIGATION DATA: always use your own official chart and list of lights.
+Kestrel Head        | Fl(3) W 15s
+Gannet Rock         | Fl(2) W 10s
+Black Ledge         | Fl(2) W 9s
+Outer Fairway       | Iso W 4s
+Harbour Entrance N  | Oc(2) G 6s
+Harbour Entrance S  | Fl R 3s
+South Shoal         | Q(6)+LFl W 15s
+East Spit           | Q(3) W 10s
+Old Pier            | Mo(A) W 8s
+Seal Island         | LFl W 10s
+Wreck Buoy          | VQ W
+Ferry Slip          | F R
