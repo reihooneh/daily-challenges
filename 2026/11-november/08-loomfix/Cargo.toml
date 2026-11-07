@@ -1,0 +1,14 @@
+[package]
+name = "loomfix"
+version = "1.0.0"
+edition = "2021"
+description = "Identifies a lighthouse or buoy light from stopwatch timings of its flashes, and finds the lights on a chart that are easy to mix up"
+license = "MIT"
+
+[dependencies]
+
+[profile.release]
+overflow-checks = true
+
+[lints.rust]
+unsafe_code = "forbid"
