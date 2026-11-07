@@ -1,0 +1,8 @@
+# A colony that swarmed in spring (Sydney), inspected about once a week.
+hive Blue hive
+2026-10-03 eggs larvae capped queen no-cells
+2026-10-10 eggs larvae capped cells-open         # swarm cells started along the bottom bars
+2026-10-17 no-eggs larvae capped cells-capped swarm
+2026-10-24 no-eggs no-larvae capped cells-capped
+2026-10-31 no-eggs no-larvae capped cells-hatched virgin
+2026-11-07 no-brood

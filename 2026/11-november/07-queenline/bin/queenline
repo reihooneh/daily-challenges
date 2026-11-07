@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+# shellcheck source-path=SCRIPTDIR
+# Queenline: reads a beehive's inspection log and works out what happened to the queen (swarmed,
+# lost, replaced), when the new queen emerges, mates and lays, and when the colony has no capped
+# brood for a varroa treatment.
+# Usage: queenline LOG.txt [--today YYYY-MM-DD]     (LOG may be - for standard input)
+set -euo pipefail
+export LC_ALL=C.UTF-8
+
+HERE=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
+# shellcheck source=../lib/queenline.sh
+source "$HERE/../lib/queenline.sh"
+# shellcheck source=../lib/report.sh
+source "$HERE/../lib/report.sh"
+
+usage() {
+  cat <<'TXT'
+Usage: queenline LOG.txt [--today YYYY-MM-DD]      (LOG may be - for standard input)
+
+  hive Blue hive                          optional, before the first inspection
+  2026-10-03 eggs larvae capped queen     one inspection a line: the date, then what you saw
+  2026-10-17 no-eggs larvae capped cells-capped swarm
+
+  eggs no-eggs larvae no-larvae capped no-capped no-brood    worker brood
+  queen virgin                                               a laying queen, or a virgin, seen
+  cells-open cells-capped cells-hatched no-cells             queen cells
+  drone-laying swarm                                         drone brood in worker cells; a swarm seen
+
+--today gives the date to plan from (default: the last inspection).
+Exit codes: 0 report printed, 2 bad usage or input.
+TXT
+  exit 2
+}
+
+main() {
+  local file='' today=''
+  while (($#)); do
+    case $1 in
+      --today) (($# >= 2)) || usage; today=$2; shift 2 ;;
+      -h | --help) usage ;;
+      -) [[ -z $file ]] || usage; file=-; shift ;;
+      -*) usage ;;
+      *) [[ -z $file ]] || usage; file=$1; shift ;;
+    esac
+  done
+  [[ -n $file ]] || usage
+  local text
+  if [[ $file == - ]]; then
+    text=$(head -c $((QL_MAX_BYTES + 1)))
+  else
+    # A regular file only: no links, folders or devices. The path is never echoed.
+    [[ ! -L $file && -f $file && -r $file ]] || ql_die 'the log could not be read (it must be a regular file, not a link)'
+    text=$(head -c $((QL_MAX_BYTES + 1)) -- "$file")
+  fi
+  ql_parse "$text"
+  ql_infer
+  local t=${QL_DAY[QL_N - 1]}
+  if [[ -n $today ]]; then
+    t=$(ql_day "$today") || ql_die '--today must be a real date, like 2026-11-07'
+    ((t >= QL_DAY[QL_N - 1])) || ql_die '--today must not be before the last inspection'
+  fi
+  ql_report "$t"
+}
+
+main "$@"
