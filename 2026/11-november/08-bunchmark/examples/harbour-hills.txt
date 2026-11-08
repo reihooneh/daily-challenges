@@ -1,0 +1,29 @@
+# A Sunday ride with two real climbs. Masses are rider plus bike.
+route Harbour Hills ride
+max_gap 3
+
+rider Priya 66 235
+rider Tom 88 290
+rider Mei 61 185
+rider Ollie 79 230
+rider Grace 70 190
+rider Dev 95 260
+
+ride 6.0 0.5        # out along the bay
+ride 2.5 1.8
+regroup Lighthouse car park
+ride 2.0 5.5        # Bobbin climb
+regroup Bobbin lookout
+ride 1.2 5.5
+ride 1.1 7.5
+regroup Top of Bobbin
+ride 4.0 -4.5
+ride 5.5 0.0
+regroup Creek bridge
+ride 2.0 3.0
+ride 2.4 6.0        # The Wall
+regroup Water tower
+ride 3.5 -1.0
+ride 6.0 -2.5
+regroup Cafe corner
+ride 4.0 0.5

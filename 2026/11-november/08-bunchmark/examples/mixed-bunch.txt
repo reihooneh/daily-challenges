@@ -1,0 +1,27 @@
+# The same ride with a much wider spread of fitness: one bunch can't stay within 3 minutes.
+route Harbour Hills ride
+max_gap 3
+
+rider Priya 66 245
+rider Tom 88 270
+rider Mei 61 185
+rider Ollie 79 200
+rider Grace 70 165
+rider Dev 95 210
+
+ride 6.0 0.5        # out along the bay
+ride 2.5 1.8
+regroup Lighthouse car park
+ride 3.2 5.5        # Bobbin climb
+ride 1.1 7.5
+regroup Top of Bobbin
+ride 4.0 -4.5
+ride 5.5 0.0
+regroup Creek bridge
+ride 2.0 3.0
+ride 2.4 6.0        # The Wall
+regroup Water tower
+ride 3.5 -1.0
+ride 6.0 -2.5
+regroup Cafe corner
+ride 4.0 0.5
