@@ -2,12 +2,13 @@
 
 Small, complete projects, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
 
-**Projects:** 51 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
+**Projects:** 52 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
 
 ## November 2026
 
 | Day | Project | What it does | Language | Field |
 |---|---|---|---|---|
+| 08 | [**Bunchmark**](2026/11-november/08-bunchmark/) | Plans where a mixed-ability group ride should regroup: simulates every rider from power and weight, and finds the fewest stops that keep the last rider within a few minutes, or the best way to split the bunch | Python | Cycling / physics simulation and dynamic programming |
 | 08 | [**Loomfix**](2026/11-november/08-loomfix/) | Tells you which lighthouse or buoy you're looking at from stopwatch timings of its flashes, with a chance for each light, and finds the lights on a chart that are easy to mix up | Rust | Marine navigation / statistical pattern matching |
 | 07 | [**Queenline**](2026/11-november/07-queenline/) | Reads a beehive's inspection notes and works out when the queen stopped laying, whether the colony swarmed, when the new queen emerges, mates and lays, and the broodless window for a varroa treatment | Bash | Beekeeping / reasoning with time intervals |
 | 07 | [**Grassline**](2026/11-november/07-grassline/) | Works out how much grass to take in lawn bowls: the aim for a biased bowl to draw to the jack at any length and green speed, solved in closed form and calibrated from your own shots | PHP | Lawn bowls / physics of rolling bodies |
