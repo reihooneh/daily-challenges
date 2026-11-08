@@ -1,0 +1,4 @@
+kilnstack
+tests/test_kilnstack
+tests/kilnstack_san
+*.o
