@@ -1,0 +1,17 @@
+# A community studio's glaze firing: a 46 cm top-loader, half shelves.
+kiln 46 66
+shelves half
+firing glaze
+shelf 1.6
+wall 2.5          # keep glaze clear of the elements
+gap 1.0           # glazed pieces must not touch
+headroom 1.5
+floor 2.5
+posts 2.5 5 7.5 10 15
+
+piece 14 24 2 Tall vase
+piece 18 9 3 Serving bowl
+piece 9 11 12 Mug
+piece 16 7 6 Cereal bowl
+piece 19 3 2 Platter
+piece 7 7 8 Tea bowl
