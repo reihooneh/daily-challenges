@@ -1,0 +1,27 @@
+[project]
+name = "bunchmark"
+version = "1.0.0"
+description = "Plans where a mixed-ability group ride should regroup: simulates every rider over the route from power and weight, and finds the fewest stops that keep the bunch together"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = []
+
+[project.scripts]
+bunchmark = "bunchmark.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 130
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "B", "UP", "S", "SIM", "RUF", "N", "I"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101", "S311", "S603"]
