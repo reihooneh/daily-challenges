@@ -1,0 +1,10 @@
+# A rock groove, a fill down the toms, and the crash on one.
+title: Rock groove into a tom fill
+tempo: 112
+grid: 16
+lead: right
+
+bar: hh+k - hh - hh+sn - hh - hh+k - hh+k - hh+sn - hh -
+bar: hh+k - hh - hh+sn - hh - sn sn t1 t1 t2 t2 ft ft
+bar: sn t1 t2 ft sn t1 t2 ft sn sn t1 t2 ft ft k ft
+bar: crash+k - hh - hh+sn - hh - hh+k - hh+k - hh+sn - hh -

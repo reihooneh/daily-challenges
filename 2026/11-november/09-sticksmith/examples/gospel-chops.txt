@@ -1,0 +1,10 @@
+# A busy six-stroke fill around a kit with a second floor tom on the far right.
+title: Six-stroke fill with two floor toms
+tempo: 88
+grid: 24
+lead: right
+drum ft2 1.05 second floor tom
+drum ride 1.25 ride cymbal
+
+bar: sn sn t1 sn sn t1 t1 t1 t2 t1 t1 t2 t2 t2 ft t2 t2 ft ft ft ft2 ft ft ft2
+bar: crash+k - - hh - hh hh+sn - hh hh - hh ride+k - ride ride - ride ride+sn - ride ride - ride
