@@ -2,12 +2,13 @@
 
 Small, complete projects, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
 
-**Projects:** 53 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
+**Projects:** 54 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
 
 ## November 2026
 
 | Day | Project | What it does | Language | Field |
 |---|---|---|---|---|
+| 09 | [**Sticksmith**](2026/11-november/09-sticksmith/) | Works out which hand plays every note of a drum fill or groove, the way a teacher would: no rushed crossovers, doubles only where they help, the lead hand on the beat. Finds the fastest tempo it can be played at and where it breaks | JavaScript | Drumming / dynamic programming |
 | 09 | [**Kilnstack**](2026/11-november/09-kilnstack/) | Plans how to load a pottery kiln: which shelf each piece goes on and where, the post stacks between shelves from the sizes you own, and how many firings it takes, with a map of every shelf | C | Ceramics / 3D packing |
 | 08 | [**Bunchmark**](2026/11-november/08-bunchmark/) | Plans where a mixed-ability group ride should regroup: simulates every rider from power and weight, and finds the fewest stops that keep the last rider within a few minutes, or the best way to split the bunch | Python | Cycling / physics simulation and dynamic programming |
 | 08 | [**Loomfix**](2026/11-november/08-loomfix/) | Tells you which lighthouse or buoy you're looking at from stopwatch timings of its flashes, with a chance for each light, and finds the lights on a chart that are easy to mix up | Rust | Marine navigation / statistical pattern matching |
