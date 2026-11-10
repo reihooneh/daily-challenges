@@ -1,0 +1,27 @@
+# A suburban front yard, Australian 230 V.
+title: The Nguyens' front yard
+voltage 230
+
+circuit c1 breaker 16 load 1200     # kitchen: the fridge and dishwasher run during the show
+circuit c2 breaker 10 load 150      # front rooms
+circuit c3 breaker 16 load 0        # garage
+
+outlet porch circuit c2 at 9 2 rcd
+outlet garage circuit c3 at 16 3 rcd
+outlet side circuit c1 at 0 9 rcd
+outlet lounge circuit c2 at 6 8               # inside: no RCD
+
+light roofline watts 96 at 3 1 chain-limit 216
+light gutter-icicles watts 120 at 14 1 chain-limit 216
+light tree-wrap watts 45 at 6 0
+light reindeer watts 180 at 5 4
+light santa-inflatable watts 150 at 11 5
+light path-stakes watts 24 at 8 4
+light window-candles watts 30 at 6 7 inside
+light projector watts 35 at 13 6
+light hedge-net watts 72 at 2 6
+
+cord 10 rated 10 count 3
+cord 20 rated 10 count 2
+cord 5 rated 10
+cord 15 rated 15

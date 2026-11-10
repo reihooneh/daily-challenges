@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# tinselwatt display.txt   -> a plug-in plan for a Christmas light display
+require_relative '../lib/tinselwatt'
+
+if ARGV.size != 1 || %w[-h --help].include?(ARGV[0])
+  puts 'usage: tinselwatt display.txt'
+  puts 'Plans which outlet and cord powers each light, keeping circuits, sockets and cords within safe limits.'
+  exit(ARGV.size == 1 ? 0 : 2)
+end
+
+begin
+  display = Tinselwatt::Display.parse(Tinselwatt.read_file(ARGV[0]))
+  plan = Tinselwatt::Planner.new(display).plan
+  print Tinselwatt::Report.text(plan)
+  exit(plan.skipped.empty? ? 0 : 3)
+rescue Tinselwatt::InputError => e
+  warn "tinselwatt: #{e.message}"
+  exit 1
+end

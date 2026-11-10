@@ -1,0 +1,24 @@
+# A North American porch and yard, 120 V, with older incandescent sets that draw a lot.
+title: Maple Street porch
+voltage 120
+
+circuit porch breaker 15 load 300      # porch light and the front room's TV
+circuit garage breaker 20 load 0
+circuit kitchen breaker 20 load 1100   # the fridge and the kettle
+
+outlet porch-gfci circuit porch at 4 0 rcd
+outlet garage-gfci circuit garage at 20 2 rcd
+outlet hall circuit kitchen at 9 6           # indoors, no GFCI
+
+light c9-roofline watts 525 at 6 1 chain-limit 1000
+light mini-lights-bushes watts 408 at 2 4 chain-limit 420
+light lit-arch watts 300 at 30 12
+light blow-mold-nativity watts 360 at 12 8
+light star-tree-topper watts 40 at 9 7 inside
+light laser-projector watts 20 at 15 10
+
+cord 15 rated 13 count 2
+cord 30 rated 13
+cord 50 rated 13
+cord 6 rated 13
+cord 25 rated 15
