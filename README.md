@@ -2,12 +2,13 @@
 
 Small, complete projects, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
 
-**Projects:** 55 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
+**Projects:** 56 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
 
 ## November 2026
 
 | Day | Project | What it does | Language | Field |
 |---|---|---|---|---|
+| 10 | [**Tinselwatt**](2026/11-november/10-tinselwatt/) | Plans where to plug in a Christmas light display: an outlet and a cord for every light, within each circuit's 80% limit, cord ratings, a 3% voltage drop and RCD rules, with the least cord laid, and the extra cord that would light anything left dark | Ruby | Home electrics / branch and bound |
 | 10 | [**Floatwise**](2026/11-november/10-floatwise/) | Plans where to catch the long floats in stranded colourwork knitting: the fewest catches, placed over the whole chart so none stack above another and show through. Draws the chart with every catch marked | Java | Knitting / dynamic programming over rows |
 | 09 | [**Sticksmith**](2026/11-november/09-sticksmith/) | Works out which hand plays every note of a drum fill or groove, the way a teacher would: no rushed crossovers, doubles only where they help, the lead hand on the beat. Finds the fastest tempo it can be played at and where it breaks | JavaScript | Drumming / dynamic programming |
 | 09 | [**Kilnstack**](2026/11-november/09-kilnstack/) | Plans how to load a pottery kiln: which shelf each piece goes on and where, the post stacks between shelves from the sizes you own, and how many firings it takes, with a map of every shelf | C | Ceramics / 3D packing |
