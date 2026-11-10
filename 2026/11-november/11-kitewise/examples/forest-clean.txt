@@ -1,0 +1,9 @@
+# A short forest course with no problems.
+title: Pine Ridge, course A
+control S at 0 0 start
+control 101 at 310 220 feature boulder
+control 102 at 620 80 feature re-entrant
+control 103 at 860 400 feature knoll
+control 104 at 520 610 feature boulder
+control F at 300 640 finish
+course S 101 102 103 104 F

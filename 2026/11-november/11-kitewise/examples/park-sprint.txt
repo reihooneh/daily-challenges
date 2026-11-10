@@ -1,0 +1,15 @@
+# A park sprint with two dog-legs and a crowded corner. Positions in metres (east, north).
+title: Riverside Park sprint, course B
+sprint
+
+control S at 0 0 start
+control 31 at 120 60 feature bench
+control 32 at 230 30 feature path junction
+control 33 at 150 115 feature statue move 20
+control 34 at 260 150 feature bench
+control 35 at 330 70 feature fountain move 15
+control 36 at 245 135 feature bench move 20
+control 37 at 360 180 feature tree
+control F at 380 230 finish
+
+course S 31 32 33 34 35 36 37 F
