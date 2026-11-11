@@ -1,0 +1,6 @@
+# Home cheesemaking: feta-ish blocks in a small tub, no topping up, warm kitchen.
+brine litres=4 salt=20 temp=18 restore=no
+
+cheese name=first  diameter=12 height=8 moisture=55 count=2 target=6
+cheese name=second diameter=12 height=8 moisture=55 count=2 target=6
+cheese name=third  diameter=12 height=8 moisture=55 count=2 target=6

@@ -1,0 +1,5 @@
+# Three gouda wheels, then a tray of small goudas, in one 40 L brine tub in a cool cellar.
+brine litres=40 salt=23 temp=12 restore=yes
+
+cheese name=gouda      diameter=22 height=9  moisture=42 count=3  target=4.5
+cheese name=baby-gouda diameter=10 height=5  moisture=43 count=12 target=4.5
