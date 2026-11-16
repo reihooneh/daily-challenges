@@ -2,12 +2,13 @@
 
 Small, complete projects, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
 
-**Projects:** 59 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
+**Projects:** 60 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
 
 ## November 2026
 
 | Day | Project | What it does | Language | Field |
 |---|---|---|---|---|
+| 16 | [**Kerbtuck**](2026/11-november/16-kerbtuck/) | Works out whether a car fits a kerbside gap: a closed-form one-go gap (checked by simulation) and a Dijkstra motion planner over exact arcs that finds the fewest gear changes for tighter gaps, replayed every 5 cm and drawn from above | TypeScript | Driving / vehicle kinematics and motion planning |
 | 16 | [**Hellbox**](2026/11-november/16-hellbox/) | Plans a letterpress job around the type you own: a min-cost flow chooses substitutions (VV for W, a turned n for u) and ligatures, branch and bound groups pages into the fewest formes, and it lists the fewest sorts to buy | Go | Letterpress printing / network flows |
 | 12 | [**Saltrind**](2026/11-november/12-saltrind/) | Works out how long to brine each batch of cheese with a 2D salt-diffusion model of the wheel, checked against the exact cylinder solution, and tracks the brine weakening batch by batch: salt to add back, weak-brine warnings and how long the salt takes to even out | C++ | Cheesemaking / diffusion modelling |
 | 11 | [**Kitewise**](2026/11-november/11-kitewise/) | Checks an orienteering course for dog-legs (measured in metres of giveaway), crowded controls, pass-bys and crossings, and finds where to move the kites the setter allows so they go away | Lua | Orienteering / computational geometry |
