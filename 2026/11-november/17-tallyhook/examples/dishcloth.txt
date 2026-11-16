@@ -1,0 +1,4 @@
+Dishcloth worked in rows
+Row 1: ch 21, sc in 2nd ch from hook and in each ch across, turn (20)
+Rows 2-24: ch 1, sc in each st across, turn (20)
+Row 25: ch 1, sc2tog, sc in next 16 sts, sc2tog, turn (18)

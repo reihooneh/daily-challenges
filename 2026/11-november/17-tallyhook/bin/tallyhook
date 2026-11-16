@@ -1,0 +1,9 @@
+#!/usr/bin/perl -T
+# tallyhook: checks a crochet pattern's stitch counts, round by round.
+use strict;
+use warnings FATAL => 'all';
+use FindBin ();
+use lib do { my ($dir) = $FindBin::RealBin =~ m{\A([\w./ -]+)\z} or die "unsafe install path\n"; "$dir/../lib" };
+use Tallyhook::App qw(run);
+
+exit run(\@ARGV, \*STDIN, \*STDOUT, \*STDERR);

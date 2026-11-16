@@ -1,0 +1,7 @@
+Flat coaster (US terms)
+Rnd 1: 8 sc in magic ring, join with sl st to first sc (8)
+Rnd 2: ch 1, 2 sc in each st around, join (16)
+Rnd 3: ch 1, *sc in next st, 2 sc in next st; rep from * around, join (24)
+Rnd 4: ch 1, *sc in next 2 sts, 2 sc in next st; rep from * around, join (30)
+Rnd 5: ch 1, *sc in next 4 sts, 2 sc in next st; rep from * around, join (40)
+Rnd 6: ch 1, *sc in next 4 sts, inc; rep from * around, join (54)
