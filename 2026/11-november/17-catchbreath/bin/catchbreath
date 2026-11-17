@@ -1,0 +1,11 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+// catchbreath: where a singer should breathe, so no phrase runs out of air.
+foreach (['Song', 'Planner', 'Report', 'Cli'] as $file) {
+    require_once __DIR__ . "/../src/$file.php";
+}
+
+exit(Catchbreath\Cli::run(array_slice($argv, 1), STDIN, STDOUT, STDERR));

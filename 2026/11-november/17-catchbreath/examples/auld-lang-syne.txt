@@ -1,0 +1,13 @@
+# Auld Lang Syne, words by Robert Burns (1788), public domain. Beats are approximate, in 4/4.
+title: Auld Lang Syne
+tempo: 92
+breath: 6
+catch: 0.5
+
+Should:1 auld:1.5 ac-:0.5 quain-:1 tance:1 be:1.5 for-:0.5 got,:2
+And:1 ne-:1.5 ver:0.5 brought:1 to:1 mind?:3
+Should:1 auld:1.5 ac-:0.5 quain-:1 tance:1 be:1.5 for-:0.5 got,:2
+And:1 auld:1.5 lang:0.5 syne!:3 _:1
+For:1 auld:1.5 lang:0.5 syne,:1 my:1 dear,:1.5 for:0.5 auld:2 lang:1 syne,:2
+We'll:1 tak:1 a:1 cup:1.5 o':0.5 kind-:2 ness:1 yet,:2
+For:1 auld:1 lang:1 syne.:3

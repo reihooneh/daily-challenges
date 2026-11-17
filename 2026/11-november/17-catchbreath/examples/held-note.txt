@@ -1,0 +1,8 @@
+# A made-up phrase with a note held for 14 beats at a slow tempo: too long for one breath.
+title: The Long Note
+tempo: 60
+breath: 9
+
+Sing:1 to:1 the:1 morn-:1 ing,:2 _:1
+Ah:14
+and:1 rest.:3

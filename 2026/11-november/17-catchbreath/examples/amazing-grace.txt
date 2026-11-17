@@ -1,0 +1,15 @@
+# Amazing Grace, words by John Newton (1779), public domain. Beats are approximate, in 3/4.
+title: Amazing Grace
+tempo: 88
+breath: 9
+catch: 0.5
+
+A-:1 ma-:2 zing:1 grace!:2 how:1 sweet:2 the:1 sound:5
+That:1 saved:2 a:1 wretch:2 like:1 me!:5
+I:1 once:2 was:1 lost,:2 but:1 now:2 am:1 found,:5
+Was:1 blind,:2 but:1 now:2 I:1 see.:5 _:1
+
+'Twas:1 grace:2 that:1 taught:2 my:1 heart:2 to:1 fear,:5
+And:1 grace:2 my:1 fears:2 re-:1 lieved;:5
+How:1 pre-:2 cious:1 did:2 that:1 grace:2 ap-:1 pear:5
+The:1 hour:2 I:1 first:2 be-:1 lieved.:5
