@@ -1,0 +1,13 @@
+# A small home cellar. Windows are the drinking windows from the label, the shop or a critic.
+start 2026-12
+rate 2
+
+Hunter Valley Semillon 2019, 3, 2025, 2027-06
+Rose 2025, 4, 2026-01, 2027-03
+Clare Valley Riesling 2022, 4, 2026, 2030
+Yarra Valley Pinot Noir 2021, 3, 2026-06, 2028
+Margaret River Chardonnay 2022, 2, 2026, 2028-06
+Barossa Shiraz 2016, 6, 2024, 2034
+Coonawarra Cabernet 2018, 4, 2027, 2035
+Rutherglen Muscat (fortified), 2, 2026, 2045
+Beaujolais 2023, 3, 2025, 2026-12

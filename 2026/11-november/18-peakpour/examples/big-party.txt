@@ -1,0 +1,7 @@
+# Bought too much rose for one summer.
+start 2026-11
+rate 3
+
+Rose 2025, 24, 2025-10, 2027-02
+Prosecco NV, 6, 2026-11, 2027-06
+Barossa Shiraz 2019, 6, 2026, 2032
