@@ -2,12 +2,13 @@
 
 Small, complete projects, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
 
-**Projects:** 61 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
+**Projects:** 62 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
 
 ## November 2026
 
 | Day | Project | What it does | Language | Field |
 |---|---|---|---|---|
+| 17 | [**Catchbreath**](2026/11-november/17-catchbreath/) | Marks where a singer should breathe: never inside a word, cheap at full stops, line ends and rests, costly after "the" or "of", with every phrase within one breath, chosen by dynamic programming (checked against brute force), and flags notes held too long to sing on one breath | PHP | Singing / dynamic programming |
 | 17 | [**Tallyhook**](2026/11-november/17-tallyhook/) | Checks a crochet pattern's stitch counts round by round: works each round into the last, catches repeats that don't fit and counts that don't match, carries on from the count the pattern meant, and draws the piece's shape, flagging increases that stack into corners | Perl | Crochet / pattern checking |
 | 16 | [**Kerbtuck**](2026/11-november/16-kerbtuck/) | Works out whether a car fits a kerbside gap: a closed-form one-go gap (checked by simulation) and a Dijkstra motion planner over exact arcs that finds the fewest gear changes for tighter gaps, replayed every 5 cm and drawn from above | TypeScript | Driving / vehicle kinematics and motion planning |
 | 16 | [**Hellbox**](2026/11-november/16-hellbox/) | Plans a letterpress job around the type you own: a min-cost flow chooses substitutions (VV for W, a turned n for u) and ligatures, branch and bound groups pages into the fewest formes, and it lists the fewest sorts to buy | Go | Letterpress printing / network flows |
