@@ -1,0 +1,14 @@
+[package]
+name = "leafkeep"
+version = "1.0.0"
+edition = "2021"
+description = "Plans gongfu tea steep times so every infusion comes out the same strength, and says when the leaves are spent"
+license = "MIT"
+
+[dependencies]
+
+[profile.release]
+overflow-checks = true
+
+[lints.rust]
+unsafe_code = "forbid"
