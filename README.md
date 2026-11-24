@@ -2,12 +2,13 @@
 
 Small, complete projects, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
 
-**Projects:** 66 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
+**Projects:** 67 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
 
 ## November 2026
 
 | Day | Project | What it does | Language | Field |
 |---|---|---|---|---|
+| 22 | [**Crownwind**](2026/11-november/22-crownwind/) | Plans when to wind a mechanical watch collection so none stops: the fewest winding sessions at the times you're home (a proven greedy, checked against brute force), then the fewest turns of each crown, with automatics that wind themselves on the days you wear them and a safety margin on every reserve | JavaScript | Watch collecting / greedy scheduling |
 | 22 | [**Foldgrain**](2026/11-november/22-foldgrain/) | Plans the paper for a handbound book: every way to cut folio, quarto, octavo or sextodecimo flats from the sheets you can buy with the grain parallel to every spine fold (checked against a brute force), within the folds and nesting your paper weight allows, costed, with signatures, blanks and an ASCII cutting diagram | C | Bookbinding / constrained cutting |
 | 21 | [**Changeplot**](2026/11-november/21-changeplot/) | Finds every costume change in a show from the costume plot and running order: the real window between exit and entrance, quick changes that need a dresser, impossible ones and what would fix them, and the fewest dressers who can cover the quick ones with time to cross behind the set (proven by an exact search, checked against brute force) | Python | Theatre production / interval scheduling |
 | 21 | [**Leafkeep**](2026/11-november/21-leafkeep/) | Times every steep of a gongfu tea session so each cup matches the first: a two-pool extraction model (surface and inner leaf) with a cooling pot, unfurling leaves and liquor carried between cups, bisection for each steep time, a warning when the leaves are spent, and calibration from refractometer readings | Rust | Tea brewing / extraction kinetics |
