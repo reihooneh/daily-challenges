@@ -1,0 +1,16 @@
+[project]
+name = "changeplot"
+version = "1.0.0"
+description = "Finds a show's quick costume changes and the fewest dressers who can cover them"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+
+[tool.ruff]
+line-length = 130
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "B", "UP", "SIM", "I", "S", "PL", "RUF"]
+ignore = ["S101", "S311", "PLR2004", "PLR0912", "PLR0915", "PLR0913", "B905"]
+
+[tool.mypy]
+strict = true
