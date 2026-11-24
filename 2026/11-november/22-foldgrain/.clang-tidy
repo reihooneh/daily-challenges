@@ -1,0 +1,3 @@
+# Annex K (_s functions) isn't available in glibc; bounded snprintf/memset are used instead.
+Checks: 'clang-analyzer-*,bugprone-*,cert-*,-clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling,-bugprone-easily-swappable-parameters,-cert-err33-c'
+WarningsAsErrors: '*'

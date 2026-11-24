@@ -1,0 +1,9 @@
+# A sewn travel journal, three copies.
+trim 140 210
+pages 192
+copies 3
+gsm 100
+margin 3
+sheet "A2 cartridge" 594 420 long 1.90
+sheet "Fabriano 50x70" 700 500 short 2.40
+sheet "A3 offcuts" 420 297 short 0.70
