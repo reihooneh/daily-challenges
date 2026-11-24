@@ -2,12 +2,13 @@
 
 Small, complete projects, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
 
-**Projects:** 65 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
+**Projects:** 66 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
 
 ## November 2026
 
 | Day | Project | What it does | Language | Field |
 |---|---|---|---|---|
+| 22 | [**Foldgrain**](2026/11-november/22-foldgrain/) | Plans the paper for a handbound book: every way to cut folio, quarto, octavo or sextodecimo flats from the sheets you can buy with the grain parallel to every spine fold (checked against a brute force), within the folds and nesting your paper weight allows, costed, with signatures, blanks and an ASCII cutting diagram | C | Bookbinding / constrained cutting |
 | 21 | [**Changeplot**](2026/11-november/21-changeplot/) | Finds every costume change in a show from the costume plot and running order: the real window between exit and entrance, quick changes that need a dresser, impossible ones and what would fix them, and the fewest dressers who can cover the quick ones with time to cross behind the set (proven by an exact search, checked against brute force) | Python | Theatre production / interval scheduling |
 | 21 | [**Leafkeep**](2026/11-november/21-leafkeep/) | Times every steep of a gongfu tea session so each cup matches the first: a two-pool extraction model (surface and inner leaf) with a cooling pot, unfurling leaves and liquor carried between cups, bisection for each steep time, a warning when the leaves are spent, and calibration from refractometer readings | Rust | Tea brewing / extraction kinetics |
 | 18 | [**Peakpour**](2026/11-november/18-peakpour/) | Plans which bottles from a wine cellar to open each month so each is drunk inside its drinking window (earliest window end first, checked against an exact matching), lists what will pass its best at your pace, and works out the fewest bottles a month that saves everything, with the stretch that forces it | Bash | Wine collecting / deadline scheduling |
