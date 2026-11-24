@@ -1,0 +1,12 @@
+# "The Arete", Mt Victoria: a traverse that finishes high on the right.
+ground 6.0 3.5
+hold 0.6 0.8
+hold 1.4 1.3
+hold 2.2 1.9
+hold 3.0 2.4 crux
+hold 3.8 3.0
+hold 4.6 3.6 topout
+rock 4.2 1.4 0.35
+rock 1.0 2.4 0.30
+pad 1.2 1.0 x2
+pad 1.0 0.6
