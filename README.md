@@ -2,12 +2,13 @@
 
 Small, complete projects, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
 
-**Projects:** 63 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
+**Projects:** 64 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
 
 ## November 2026
 
 | Day | Project | What it does | Language | Field |
 |---|---|---|---|---|
+| 21 | [**Leafkeep**](2026/11-november/21-leafkeep/) | Times every steep of a gongfu tea session so each cup matches the first: a two-pool extraction model (surface and inner leaf) with a cooling pot, unfurling leaves and liquor carried between cups, bisection for each steep time, a warning when the leaves are spent, and calibration from refractometer readings | Rust | Tea brewing / extraction kinetics |
 | 18 | [**Peakpour**](2026/11-november/18-peakpour/) | Plans which bottles from a wine cellar to open each month so each is drunk inside its drinking window (earliest window end first, checked against an exact matching), lists what will pass its best at your pace, and works out the fewest bottles a month that saves everything, with the stretch that forces it | Bash | Wine collecting / deadline scheduling |
 | 17 | [**Catchbreath**](2026/11-november/17-catchbreath/) | Marks where a singer should breathe: never inside a word, cheap at full stops, line ends and rests, costly after "the" or "of", with every phrase within one breath, chosen by dynamic programming (checked against brute force), and flags notes held too long to sing on one breath | PHP | Singing / dynamic programming |
 | 17 | [**Tallyhook**](2026/11-november/17-tallyhook/) | Checks a crochet pattern's stitch counts round by round: works each round into the last, catches repeats that don't fit and counts that don't match, carries on from the count the pattern meant, and draws the piece's shape, flagging increases that stack into corners | Perl | Crochet / pattern checking |
