@@ -1,0 +1,10 @@
+{
+  "name": "crownwind",
+  "version": "1.0.0",
+  "description": "Plans when to wind a collection of mechanical watches so none stops, with the fewest sessions",
+  "type": "module",
+  "license": "MIT",
+  "bin": { "crownwind": "src/cli.js" },
+  "scripts": { "test": "node --test tests/*.test.js" },
+  "engines": { "node": ">=20" }
+}
