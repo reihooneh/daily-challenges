@@ -1,0 +1,74 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# trailshunt GROUP.json: how to get the cars to the right end of a one-way walk.
+require_relative '../lib/trailshunt'
+
+module Trailshunt
+  module CLI
+    module_function
+
+    def names(list) = list.map(&:name).join(', ')
+
+    def report(group)
+      t = group.trail
+      plan = Trailshunt.plan(group)
+      out = []
+      out << "#{group.people.size} walkers, #{group.cars.size} cars: #{t.start} to #{t.finish} " \
+             "(#{t.drive_km} km, #{t.drive_min} min apart by road).\n"
+      if (s = plan[:shuttle])
+        out << "Shuttle: #{s.legs} drives (#{(s.legs * t.drive_km).round} km), and the walk starts " \
+               "#{t.drive_min * 2} min late."
+        out << "  1. Everyone meets at #{t.start}."
+        out << "  2. Drive #{names(s.parked)} to #{t.finish}, with #{s.ferry.name} following."
+        out << "  3. Leave them there; all #{s.parked.size + 1} drivers come back in #{s.ferry.name}."
+        out << "  4. Walk. At #{t.finish}, #{names(s.parked)} (#{Trailshunt.seats(s.parked)} seats) " \
+               "drive everyone back to #{t.start}."
+      else
+        out << 'Shuttle: not possible with these cars and drivers.'
+      end
+      out << ''
+      if (k = plan[:key_swap])
+        out << "Key swap: #{k.legs} drives (#{(k.legs * t.drive_km).round} km), and nobody waits."
+        out << "  1. #{names(k.out_team)} drive #{names(k.cars)} to #{t.finish} and walk back towards #{t.start}."
+        out << "  2. #{names(k.in_team)} start walking from #{t.start} and carry the keys to the cars left there."
+        out << '  3. Swap keys when you meet.'
+        out << "  4. #{names(k.in_team)} drive #{names(k.cars)} back to #{t.start}, " \
+               "where #{names(k.out_team)} have finished and every car now is."
+      else
+        out << 'Key swap: not possible (it needs at least four walkers and enough drivers and seats on both sides).'
+      end
+      out << ''
+      options = [plan[:shuttle], plan[:key_swap]].compact
+      if options.empty?
+        out << 'Neither works: borrow another car or book a taxi back.'
+      else
+        best = options.min_by { |o| [o.legs, o.is_a?(KeySwap) ? 0 : 1] }
+        out << "Least driving: the #{best.is_a?(KeySwap) ? 'key swap' : 'shuttle'}."
+      end
+      out.join("\n")
+    end
+
+    def main(argv)
+      unless argv.size == 1
+        warn 'usage: trailshunt GROUP.json'
+        return 2
+      end
+      path = argv[0]
+      unless File.file?(path) && !File.symlink?(path) && File.size(path) <= MAX_BYTES
+        warn 'trailshunt: the group must be a regular file under 64 KB'
+        return 2
+      end
+      text = File.read(path, encoding: 'UTF-8')
+      raise PlanError, "the file isn't UTF-8 text" unless text.valid_encoding?
+
+      puts report(Trailshunt.parse(text))
+      0
+    rescue PlanError => e
+      warn "trailshunt: #{e.message}"
+      2
+    end
+  end
+end
+
+exit Trailshunt::CLI.main(ARGV) if $PROGRAM_NAME == __FILE__

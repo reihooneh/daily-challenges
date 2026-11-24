@@ -1,0 +1,14 @@
+{
+  "trail": { "start": "Bluff Track carpark", "finish": "Ridge Road gate", "drive_km": 38, "drive_min": 45 },
+  "people": [
+    { "name": "Amira" }, { "name": "Ben" }, { "name": "Chloe" }, { "name": "Dev" },
+    { "name": "Elif", "licence": false }, { "name": "Finn", "licence": false }, { "name": "Grace" },
+    { "name": "Hiro" }, { "name": "Isla", "licence": false }
+  ],
+  "cars": [
+    { "name": "Amira's Corolla", "seats": 5, "owner": "Amira" },
+    { "name": "Dev's Outlander", "seats": 7, "owner": "Dev" },
+    { "name": "Grace's Jazz", "seats": 4, "owner": "Grace" },
+    { "name": "Hiro's van", "seats": 8, "owner": "Hiro" }
+  ]
+}
