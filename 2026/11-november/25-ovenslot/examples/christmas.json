@@ -1,0 +1,12 @@
+{
+  "serve": "18:30",
+  "shelves": 2,
+  "dishes": [
+    { "name": "Roast lamb", "temp": 180, "minutes": 100, "low": 160, "high": 190, "space": 1, "restMin": 15, "restMax": 60 },
+    { "name": "Crispy potatoes", "temp": 220, "minutes": 50, "low": 200, "high": 230, "space": 1, "restMax": 10 },
+    { "name": "Pumpkin", "temp": 200, "minutes": 40, "low": 180, "high": 220, "space": 0.5, "restMax": 30 },
+    { "name": "Yorkshire puddings", "temp": 220, "minutes": 20, "low": 210, "high": 230, "space": 0.5, "restMax": 5 },
+    { "name": "Stuffing", "temp": 180, "minutes": 35, "low": 170, "high": 220, "space": 0.5, "restMax": 30 },
+    { "name": "Pavlova", "temp": 120, "minutes": 75, "low": 110, "high": 130, "space": 1, "restMin": 120, "restMax": 600 }
+  ]
+}
