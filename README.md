@@ -2,12 +2,13 @@
 
 Small, complete projects, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
 
-**Projects:** 70 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
+**Projects:** 71 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
 
 ## November 2026
 
 | Day | Project | What it does | Language | Field |
 |---|---|---|---|---|
+| 24 | [**Padline**](2026/11-november/24-padline/) | Places bouldering crash pads under where falls actually land: a landing model per hold (further out and more spread from higher up, the crux and top-out weighted, rocks four times worse), pads placed without overlapping by greedy plus one- and two-pad re-placement over prefix sums, within 3 % of exhaustive search, with a map of the landing zone | C++ | Bouldering / spatial covering |
 | 24 | [**Loadorder**](2026/11-november/24-loadorder/) | Plans how to load a removal truck for several stops: walls of furniture and boxes from the cab back so each stop's things come off first, items oriented to save length (upright things stay standing), heavy walls forward and fragile boxes on top, the load's balance checked, and the closest stop order that fits and balances if yours doesn't | Lua | Moving house / loading and balance |
 | 23 | [**Trailshunt**](2026/11-november/23-trailshunt/) | Gets a walking group and its cars to the right ends of a one-way hike with the least driving: the best car shuttle (fewest cars parked at the finish, a ferry for their drivers) and the best key swap (two teams walking from opposite ends, split by size and licensed drivers), both checked against brute force, with step-by-step instructions | Ruby | Bushwalking logistics / combinatorial search |
 | 23 | [**Spoonfit**](2026/11-november/23-spoonfit/) | Scales a recipe and measures every line with the spoons and cups you actually own, in the fewest scoops within a tolerance (tighter for leaveners and salt): converts US, Australian and UK units (a 20 ml Australian tablespoon), solved by coin-change dynamic programming checked against brute force, with "1 tbsp, less 1 tsp" when it saves a scoop | Java | Cooking / dynamic programming |
