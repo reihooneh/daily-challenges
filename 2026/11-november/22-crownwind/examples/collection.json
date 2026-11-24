@@ -1,0 +1,19 @@
+{
+  "startWeekday": 0,
+  "startTime": "07:00",
+  "days": 14,
+  "margin": 0.1,
+  "slots": [
+    { "days": [0, 1, 2, 3, 4], "at": ["07:15", "21:30"] },
+    { "days": [5, 6], "at": ["09:00", "13:00", "21:30"] }
+  ],
+  "watches": [
+    { "name": "Calatrava", "reserve": 44, "left": 30, "kind": "manual" },
+    { "name": "Speedmaster", "reserve": 50, "left": 12, "kind": "manual" },
+    { "name": "Lange 1", "reserve": 72, "left": 60, "kind": "manual" },
+    { "name": "8-day Panerai", "reserve": 192, "left": 100, "kind": "manual" },
+    { "name": "Annual calendar", "reserve": 45, "left": 40, "kind": "automatic",
+      "worn": [{ "days": [0, 2, 4], "from": "08:30", "to": "17:30" }] },
+    { "name": "Seiko diver", "reserve": 41, "left": 20, "kind": "automatic", "mayStop": true }
+  ]
+}
