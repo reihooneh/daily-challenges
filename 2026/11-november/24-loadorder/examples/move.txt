@@ -1,0 +1,20 @@
+# Moving out of Glebe: two stops, a 4.5 m truck.
+truck 4.5 2.0 2.1
+balance 0.30 0.55
+stop storage "Self storage, Leichhardt"
+stop home "14 Wattle St, Marrickville"
+
+item "Fridge" 0.75 0.70 1.80 95 upright -> home
+item "Washing machine" 0.60 0.60 0.85 70 -> home
+item "Sofa" 2.10 0.90 0.85 60 -> home
+item "Queen mattress" 1.53 0.25 2.03 30 upright -> home
+item "Bed base" 1.53 0.30 2.03 45 -> home
+item "Dining table" 1.60 0.90 0.75 40 -> storage
+item "Chairs" 0.45 0.50 0.90 6 x6 -> storage
+item "Book boxes" 0.40 0.30 0.30 18 x14 -> storage
+item "Kitchen boxes" 0.45 0.35 0.35 12 x10 fragile -> home
+item "Clothes boxes" 0.45 0.35 0.45 9 x8 -> home
+item "TV" 1.25 0.15 0.75 15 upright fragile -> home
+item "Bookshelf" 0.80 0.30 1.80 35 upright -> storage
+item "Desk" 1.20 0.60 0.75 30 -> home
+item "Bikes" 1.70 0.60 1.00 14 x2 -> storage
