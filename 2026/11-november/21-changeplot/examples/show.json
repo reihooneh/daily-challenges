@@ -1,0 +1,27 @@
+{
+  "title": "The Tin Lantern",
+  "scenes": [
+    {"name": "1. The Quay", "length": "4:30", "gap": "0:20"},
+    {"name": "2. The Chandlery", "length": "3:10", "gap": "0:15"},
+    {"name": "3. Storm", "length": "1:50", "gap": "1:30"},
+    {"name": "4. The Ball", "length": "5:20", "gap": "0:20"},
+    {"name": "5. The Lighthouse", "length": "2:40", "gap": "0:40"},
+    {"name": "6. Morning", "length": "3:30", "gap": "0:00"}
+  ],
+  "costumes": {
+    "dock": {"minutes": 1.5},
+    "oilskin": {"minutes": 0.4},
+    "ballgown": {"minutes": 2.5},
+    "tails": {"minutes": 1.8},
+    "nightdress": {"minutes": 0.8, "under": ["ballgown"]},
+    "apron": {"minutes": 0.3},
+    "uniform": {"minutes": 1.2}
+  },
+  "actors": {
+    "Mara":  {"wing": "SL", "wears": ["dock", "dock", "oilskin", "ballgown", "nightdress", "dock"]},
+    "Tomas": {"wing": "SR", "wears": ["dock", "apron", "-", "tails", "-", "uniform"]},
+    "Ines":  {"wing": "SL", "wears": ["-", "apron", "-", "ballgown", "oilskin", "-"]},
+    "Bao":   {"wing": "SR", "wears": ["uniform", "-", "oilskin", "tails", "-", "dock"]}
+  },
+  "crossover": "0:45"
+}
