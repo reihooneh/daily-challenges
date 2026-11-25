@@ -2,12 +2,13 @@
 
 Small, complete projects, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
 
-**Projects:** 72 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
+**Projects:** 73 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
 
 ## November 2026
 
 | Day | Project | What it does | Language | Field |
 |---|---|---|---|---|
+| 26 | [**Dawnlist**](2026/11-november/26-dawnlist/) | Plans a birding big day: the order and timing of sites that expects the most species, counting each bird once with miss-chance products, waiting for dawn, tide and dusk windows, found exactly by depth-first search with a shortest-drive bound (checked against the unpruned search) | Bash | Birdwatching / orienteering with time windows |
 | 25 | [**Ovenslot**](2026/11-november/25-ovenslot/) | Plans a whole meal in one oven: groups dishes into as few temperatures as possible (cooking times rescaled for a hotter or cooler oven), works backwards from serving time with rests, heat-up and cool-down between phases and shelf space, and prints a minute-by-minute timetable | Go | Home cooking / scheduling |
 | 24 | [**Padline**](2026/11-november/24-padline/) | Places bouldering crash pads under where falls actually land: a landing model per hold (further out and more spread from higher up, the crux and top-out weighted, rocks four times worse), pads placed without overlapping by greedy plus one- and two-pad re-placement over prefix sums, within 3 % of exhaustive search, with a map of the landing zone | C++ | Bouldering / spatial covering |
 | 24 | [**Loadorder**](2026/11-november/24-loadorder/) | Plans how to load a removal truck for several stops: walls of furniture and boxes from the cab back so each stop's things come off first, items oriented to save length (upright things stay standing), heavy walls forward and fragile boxes on top, the load's balance checked, and the closest stop order that fits and balances if yours doesn't | Lua | Moving house / loading and balance |
