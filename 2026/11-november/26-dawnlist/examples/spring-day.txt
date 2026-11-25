@@ -1,0 +1,121 @@
+# A spring morning big day from a coastal town, done by midday. The sites, drives and chances are
+# made up for the example: in real life they come from your own notes or past checklists for each site.
+start home 05:00
+end 12:00
+
+site lagoon   50 Reedy lagoon
+site heath    60 Coastal heath
+site gully    70 Rainforest gully
+site flats    45 Tidal mudflats
+site dam      30 Farm dam
+site grass    40 Airport grassland
+site headland 40 Headland lookout
+site woodland 60 Ironbark woodland
+
+travel home lagoon 15
+travel home heath 25
+travel home gully 40
+travel home flats 20
+travel home dam 35
+travel home grass 30
+travel home headland 20
+travel home woodland 45
+travel lagoon heath 20
+travel lagoon gully 35
+travel lagoon flats 15
+travel lagoon dam 30
+travel lagoon grass 25
+travel lagoon headland 25
+travel lagoon woodland 40
+travel heath gully 30
+travel heath flats 30
+travel heath dam 40
+travel heath grass 35
+travel heath headland 15
+travel heath woodland 35
+travel gully flats 45
+travel gully dam 25
+travel gully grass 40
+travel gully headland 40
+travel gully woodland 20
+travel flats dam 35
+travel flats grass 15
+travel flats headland 25
+travel flats woodland 45
+travel dam grass 30
+travel dam headland 45
+travel dam woodland 15
+travel grass headland 30
+travel grass woodland 35
+travel headland woodland 45
+
+# Reedy lagoon: bitterns and crakes call at dawn.
+bird lagoon 0.55 05:00-07:00 Australasian Bittern
+bird lagoon 0.1 Australasian Bittern
+bird lagoon 0.5 05:00-07:30 Spotless Crake
+bird lagoon 0.15 Spotless Crake
+bird lagoon 0.95 Purple Swamphen
+bird lagoon 0.7 Australian Reed Warbler
+bird lagoon 0.6 Little Grassbird
+bird lagoon 0.9 Pacific Black Duck
+bird lagoon 0.4 Musk Duck
+# Coastal heath: honeyeaters, and the shy ground birds early.
+bird heath 0.6 05:00-08:00 Eastern Bristlebird
+bird heath 0.15 Eastern Bristlebird
+bird heath 0.9 New Holland Honeyeater
+bird heath 0.6 Tawny-crowned Honeyeater
+bird heath 0.7 Southern Emu-wren
+bird heath 0.8 Variegated Fairywren
+bird heath 0.35 Beautiful Firetail
+# Rainforest gully: busiest in the morning.
+bird gully 0.8 05:00-09:00 Superb Lyrebird
+bird gully 0.35 Superb Lyrebird
+bird gully 0.7 05:00-09:00 Green Catbird
+bird gully 0.3 Green Catbird
+bird gully 0.6 Wonga Pigeon
+bird gully 0.75 Eastern Yellow Robin
+bird gully 0.5 Large-billed Scrubwren
+bird gully 0.45 Rose Robin
+bird gully 0.3 Pilotbird
+# Tidal mudflats: the waders feed within two hours of low tide (11:10 today).
+bird flats 0.85 09:10-13:10 Bar-tailed Godwit
+bird flats 0.2 Bar-tailed Godwit
+bird flats 0.8 09:10-13:10 Eastern Curlew
+bird flats 0.15 Eastern Curlew
+bird flats 0.7 09:10-13:10 Red-necked Stint
+bird flats 0.1 Red-necked Stint
+bird flats 0.6 09:10-13:10 Pacific Golden Plover
+bird flats 0.1 Pacific Golden Plover
+bird flats 0.9 Pied Oystercatcher
+bird flats 0.5 Musk Duck
+# Farm dam.
+bird dam 0.8 Australasian Grebe
+bird dam 0.6 Hardhead
+bird dam 0.9 Pacific Black Duck
+bird dam 0.5 Black-fronted Dotterel
+bird dam 0.3 Spotless Crake
+# Airport grassland: raptors once the air warms, quail early.
+bird grass 0.5 10:00-16:00 Black-shouldered Kite
+bird grass 0.25 Black-shouldered Kite
+bird grass 0.45 10:00-16:00 Brown Falcon
+bird grass 0.15 Brown Falcon
+bird grass 0.4 05:00-08:00 Stubble Quail
+bird grass 0.1 Stubble Quail
+bird grass 0.85 Australasian Pipit
+bird grass 0.6 Golden-headed Cisticola
+# Headland lookout: seabirds best with an afternoon onshore breeze.
+bird headland 0.6 13:00-18:30 Australasian Gannet
+bird headland 0.3 Australasian Gannet
+bird headland 0.5 13:00-18:30 Short-tailed Shearwater
+bird headland 0.15 Short-tailed Shearwater
+bird headland 0.7 White-bellied Sea-Eagle
+bird headland 0.4 Sooty Oystercatcher
+bird headland 0.35 Peregrine Falcon
+# Ironbark woodland: a dusk owl, and parrots all day.
+bird woodland 0.55 17:00-18:30 Southern Boobook
+bird woodland 0.65 Musk Lorikeet
+bird woodland 0.6 Little Lorikeet
+bird woodland 0.5 Brown Treecreeper
+bird woodland 0.45 Speckled Warbler
+bird woodland 0.7 Eastern Rosella
+bird woodland 0.4 Rose Robin

@@ -1,0 +1,74 @@
+#!/usr/bin/env bash
+# Dawnlist: plans a birding big day. Given the sites you could visit, the drives between them and
+# the chance of seeing each bird at each site (and at what time of day), it finds the order and
+# timing of stops that expects the most species, and shows what each stop is worth.
+# Usage: dawnlist DAY.txt [--budget N]      (DAY may be - for standard input)
+set -euo pipefail
+export LC_ALL=C
+
+HERE=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
+readonly PLANNER="$HERE/../lib/dawnlist.awk"
+readonly MAX_BYTES=65536
+
+usage() {
+  cat <<'TXT' >&2
+Usage: dawnlist DAY.txt [--budget N]      (DAY may be - for standard input)
+
+  start home 05:00                              where and when you set out
+  end 18:30                                     when the day's list closes
+  site lagoon 45 Reedy lagoon                   id, minutes you'll bird there, name
+  travel home lagoon 25                         minutes between two places (both ways)
+  bird lagoon 0.6 05:00-07:30 Australasian Bittern
+  bird lagoon 0.15 Australasian Bittern         a chance outside any window
+
+--budget caps the partial routes weighed (default 150000, at most 5000000).
+Exit codes: 0 a plan, 2 bad usage or input.
+TXT
+  exit 2
+}
+
+die() {
+  printf 'dawnlist: %s\n' "$1" >&2
+  exit 2
+}
+
+main() {
+  local file='' budget=150000
+  while (($#)); do
+    case $1 in
+      --budget)
+        (($# >= 2)) || usage
+        if [[ ! $2 =~ ^[0-9]{1,8}$ ]] || ((10#$2 < 1000 || 10#$2 > 5000000)); then
+          die '--budget is 1000 to 5000000'
+        fi
+        budget=$((10#$2))
+        shift 2
+        ;;
+      -h | --help) usage ;;
+      -) [[ -z $file ]] || usage; file=-; shift ;;
+      -*) usage ;;
+      *) [[ -z $file ]] || usage; file=$1; shift ;;
+    esac
+  done
+  [[ -n $file ]] || usage
+
+  local text
+  if [[ $file == - ]]; then
+    text=$(head -c $((MAX_BYTES + 1)))
+  else
+    # A regular file only: no links, folders, pipes or devices. The path is never printed back.
+    [[ ! -L $file && -f $file && -r $file ]] || die 'the day file could not be read (it must be a regular file, not a link)'
+    text=$(head -c $((MAX_BYTES + 1)) -- "$file")
+  fi
+  ((${#text} <= MAX_BYTES)) || die 'the day file is larger than 64 KB'
+
+  # The whole search runs in awk, which only reads the text: nothing in the file is ever executed.
+  # It is stopped after 60 seconds whatever happens.
+  printf '%s\n' "$text" | timeout 60 awk -v budget="$budget" -f "$PLANNER" || {
+    local code=$?
+    ((code == 124)) && die 'the search took longer than a minute; lower --budget'
+    exit "$code"
+  }
+}
+
+main "$@"
