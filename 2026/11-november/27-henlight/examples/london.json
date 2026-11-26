@@ -1,0 +1,13 @@
+{
+  "name": "Allotment in London",
+  "lat": 51.5,
+  "lon": -0.13,
+  "utcOffset": 0,
+  "dst": "eu",
+  "year": 2026,
+  "from": "09-15",
+  "to": "12-31",
+  "target": 14,
+  "most": 15,
+  "step": 30
+}

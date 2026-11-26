@@ -1,0 +1,16 @@
+{
+  "name": "Backyard in Sydney",
+  "lat": -33.87,
+  "lon": 151.21,
+  "utcOffset": 10,
+  "dst": "au",
+  "year": 2026,
+  "from": "03-01",
+  "to": "09-30",
+  "target": 14,
+  "most": 14.5,
+  "ramp": 30,
+  "step": 15,
+  "watts": 9,
+  "price": 0.33
+}
