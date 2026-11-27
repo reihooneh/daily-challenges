@@ -1,0 +1,4 @@
+severity = 4
+# Named numeric constants (g, pi, input limits) read better than Readonly,
+# which would be a non-core dependency.
+[-ValuesAndExpressions::ProhibitConstantPragma]

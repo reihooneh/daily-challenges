@@ -1,0 +1,10 @@
+# editor and OS clutter
+*~
+*.swp
+.DS_Store
+# Perl build and coverage output
+blib/
+cover_db/
+Makefile
+MYMETA.*
+*.tmp

@@ -1,0 +1,54 @@
+#!/usr/bin/env perl
+# farswell - find where and when a distant storm made the swell your buoys see
+use strict;
+use warnings;
+use FindBin qw($RealBin);
+use lib "$RealBin/../lib";
+use Getopt::Long qw(GetOptionsFromArray);
+use Farswell qw(analyse);
+use Farswell::Input qw(read_file parse_beach);
+use Farswell::Render qw(report);
+
+sub usage {
+    return <<'USAGE';
+usage: farswell [options] READINGS.txt
+
+  --beach NAME:LAT:LON   forecast when each period reaches this beach
+  --tz HOURS             show times in this UTC offset (-12..14, default 0)
+  --reps N               bootstrap refits for error bars (0..1000, default 200)
+  --seed N               random seed for the bootstrap (default 1)
+  --help
+
+READINGS.txt:
+  buoy Sydney -33.77 151.42
+  2026-11-20T03:00Z 19.1 195      # UTC time, peak period (s), direction from (deg, optional)
+USAGE
+}
+
+sub main {
+    my @args = @_;
+    my %o = (tz => 0, reps => 200, seed => 1);
+    GetOptionsFromArray(\@args, \%o, 'beach=s', 'tz=s', 'reps=s', 'seed=s', 'help')
+      or die usage();
+    if ($o{help}) { print usage(); return 0 }
+    die usage() unless @args == 1;
+    die "--tz must be a number of hours from -12 to 14\n"
+      unless $o{tz} =~ /^[+-]?\d{1,2}(?:\.\d{1,2})?$/ && $o{tz} >= -12 && $o{tz} <= 14;
+    die "--reps must be a whole number from 0 to 1000\n"
+      unless $o{reps} =~ /^\d{1,4}$/ && $o{reps} <= 1000;
+    die "--seed must be a whole number below 4294967296\n"
+      unless $o{seed} =~ /^\d{1,10}$/ && $o{seed} < 4294967296;
+    my $beach = defined $o{beach} ? parse_beach($o{beach}) : undef;
+    my $buoys = read_file($args[0]);
+    my $res   = analyse($buoys, reps => $o{reps}, seed => $o{seed});
+    print report($res, tz => $o{tz}, beach => $beach);
+    return 0;
+}
+
+my $rc = eval { main(@ARGV) };
+if (!defined $rc) {
+    (my $e = $@ || "unknown error\n") =~ s/ at \S+ line \d+\.?\n?$/\n/;
+    print STDERR "farswell: $e";
+    exit 2;
+}
+exit $rc;
