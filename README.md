@@ -2,12 +2,13 @@
 
 Small, complete projects, each exploring a different language or corner of computer science. Every project has its own folder with a README, a `HOW-IT-WORKS.md` walkthrough, source code and tests.
 
-**Projects:** 74 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
+**Projects:** 75 · **Languages so far:** Bash, C, C++, Go, Java, JavaScript, Lua, Perl, PHP, Python, Ruby, Rust, TypeScript
 
 ## November 2026
 
 | Day | Project | What it does | Language | Field |
 |---|---|---|---|---|
+| 28 | [**Farswell**](2026/11-november/28-farswell/) | Reads a swell backwards: from the falling periods buoys report, a robust line through frequency against time gives each buoy its distance to the storm and when it blew, great-circle trilateration (nudged by swell direction, warning about mirror-image fits) puts the storm on a text map, and a bootstrap gives error bars for when each period reaches your beach | Perl | Surfing / wave dispersion and robust regression |
 | 27 | [**Henlight**](2026/11-november/27-henlight/) | Plans a season of hen-house lighting on a plain plug-in timer: sunrise and sunset from the NOAA formulas on the wall clock (daylight saving included), a gentle ramp up to 14 hours, morning-only light, and the fewest pin changes by a provably optimal greedy, checked against dynamic programming | TypeScript | Backyard poultry / interval covering |
 | 26 | [**Dawnlist**](2026/11-november/26-dawnlist/) | Plans a birding big day: the order and timing of sites that expects the most species, counting each bird once with miss-chance products, waiting for dawn, tide and dusk windows, found exactly by depth-first search with a shortest-drive bound (checked against the unpruned search) | Bash | Birdwatching / orienteering with time windows |
 | 25 | [**Ovenslot**](2026/11-november/25-ovenslot/) | Plans a whole meal in one oven: groups dishes into as few temperatures as possible (cooking times rescaled for a hotter or cooler oven), works backwards from serving time with rests, heat-up and cool-down between phases and shelf space, and prints a minute-by-minute timetable | Go | Home cooking / scheduling |
